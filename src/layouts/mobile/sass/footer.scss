@@ -1,0 +1,78 @@
+/******** footer *************/
+
+@media screen and (display-mode: standalone) {
+    #mobile-footer {
+        height: 73px !important;
+    }
+}
+
+#mobile-footer {
+    background-color: $bg-primary;
+    border-top: 1px solid #96969630;
+    height: 53px;
+    position: fixed !important;
+    z-index: 999999999999999999;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0px 10px;
+    padding-bottom: calc(env(safe-area-inset-bottom) + 43px);
+    z-index: 1;
+}
+
+#mobile-footer .footer-items {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    text-align: center;
+}
+.footer-item {
+    position: relative;
+    color: #000 !important;
+    font-family: system-ui;
+
+    flex: 1;
+}
+.footer-item a {
+    display: block;
+    color: #000;
+}
+
+.footer-item a span {
+    font-size: 11px;
+    display: block;
+    margin-top: -3px;
+    font-weight: 500;
+}
+
+#mobile-footer .footer-items .footer-item a i {
+    font-size: 24px;
+}
+
+.footer-item .cart-counter {
+    position: absolute;
+    top: 6px;
+    left: 16px !important;
+    background-color: #cf222e;
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.active-footer-item {
+    color: #51c0a9 !important;
+}
+
+@media (min-width: 1200px) {
+    .col-xl-2.category-card {
+        flex: 0 0 auto;
+        width: 13.66666667%;
+    }
+}
+.scaleFooterItem {
+    transform: scale(1.1);
+}

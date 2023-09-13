@@ -1,0 +1,55 @@
+.mobile-sort-products .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px 10px !important;
+}
+.sort-products-title {
+    font-weight: 600;
+}
+.mobile-sort-products .header .btn-close {
+    font-size: 12px;
+}
+.mobile-sort-products .body {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.mobile-sort-products .body .list-group .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 12px;
+    border-right: none;
+    border: 1px solid rgb(0 0 0 / 8%);
+    border-radius: 0;
+}
+.mobile-sort-products .body .list-group .list-group-item .circle-wrap {
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    border: 1px solid rgba(127, 127, 127, 0.69);
+    border-radius: 100%;
+    position: relative;
+    text-align: center;
+}
+.mobile-sort-products .body .list-group .list-group-item .circle-wrap .active-sort {
+    border-radius: 100%;
+    width: 82%;
+    height: 80%;
+    text-align: center;
+    background-color: $bg-green;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mobile-sort-products .body .list-group .list-group-item .circle-wrap .active-sort:before {
+    content: "✓";
+    color: white;
+    font-size: 11px;
+
+    text-align: center;
+}

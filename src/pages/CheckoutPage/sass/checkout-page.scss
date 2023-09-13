@@ -1,0 +1,47 @@
+@import "@/pages/CheckoutPage/sass/checkout-product.scss";
+@media only screen and (max-width: 767px) {
+    .checkout-deatils li {
+        font-size: 13px;
+    }
+    .checkout_coupon_form {
+        padding: 0 6px !important;
+        font-size: 13px !important;
+    }
+    .checkout_coupon_form input {
+        font-size: 13px !important;
+    }
+}
+
+.checkout_coupon_form {
+    display: flex;
+    align-items: center;
+    padding: 1px 7px;
+    font-size: 15px;
+}
+.card_checkout_coupon_form {
+    border: none;
+    margin: 1rem 0 0;
+}
+
+.checkout_coupon_form.is-invalid {
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: rgb(255, 85, 61) !important;
+    background-color: rgba(255, 85, 61, 0.03);
+}
+
+.address_actions {
+    padding: 2px 10px;
+}
+.address_actions i {
+    font-size: 18px;
+}
+.checkout-deatils {
+    padding: 2px 12px;
+}
+.buy-now-btn {
+    border-radius: 0 0 0.375rem 0.375rem !important;
+    padding: 0.5rem !important;
+    width: 100% !important;
+    margin-top: 15px;
+}

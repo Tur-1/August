@@ -1,0 +1,91 @@
+/******** categories page *************/
+@media screen and (display-mode: standalone) {
+}
+.categories-page-header {
+    width: 100%;
+    position: fixed;
+    top: 45px;
+    background-color: white;
+    display: flex;
+}
+
+.categories-page-header .section-tab {
+    background-color: transparent;
+    color: #6e6e6e !important;
+    width: -webkit-fill-available;
+    text-align: center;
+    padding: 7px;
+    font-size: 14px;
+    border-bottom: 1px solid grey !important;
+    border-radius: 0 !important;
+}
+
+.categories-page-header .section-tab.active {
+    border-bottom: 3px solid #51c0a9 !important;
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
+    color: #51c0a9 !important;
+}
+.categories-page-header .section-tab.placeholder {
+    border-right: 1px solid #727272;
+    min-height: 37px;
+}
+
+.categories-page-body {
+    background-color: #f9f9f9;
+    padding-top: 35px;
+}
+.categories-page-body .section-content {
+    background-color: #f9f9f9;
+    display: none;
+    grid-template-columns: 1.3fr 3fr;
+    padding-top: 7px;
+    min-height: calc(100vh - 140px);
+}
+
+.categories-page-body .section-content.active_section_content {
+    display: grid !important;
+}
+.categories-page-body .section-content .categories-sidebar {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-color: #d8d8d8;
+}
+.categories-page-body .section-content .categories-sidebar button {
+    width: 100%;
+    padding: 10px !important;
+    color: #404040 !important;
+    background-color: transparent;
+    border: none;
+}
+.categories-page-body .section-content .categories-sidebar button.active {
+    background-color: #f9f9f9 !important;
+
+    color: #000 !important;
+}
+.categories-page-body .section-content .categories-content {
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: max-content;
+    grid-gap: 30px 7px;
+    margin: 0 5px;
+    padding-bottom: 30px;
+}
+.categories-page-body .section-content .categories-content.content_active {
+    display: grid !important;
+}
+.categories-page-body .section-content .card-category {
+    text-align: center;
+    color: #6e6e6e;
+    font-size: 11px !important;
+    font-family: system-ui;
+    height: 110px !important;
+    margin-bottom: 10px;
+}
+
+.categories-page-body .section-content .card-category img,
+.categories-page-body .section-content .card-category div.placeholder {
+    width: 100%;
+    height: 100%;
+}

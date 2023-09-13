@@ -1,0 +1,27 @@
+/*********** breadcrumb **************/
+.desktop-shop-page-header {
+    padding: 30px 0;
+}
+.desktop-shop-page-header .current-category {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+}
+.desktop-shop-page-header .breadcrumb {
+    align-items: center;
+    color: #6e6e6e;
+}
+
+.desktop-shop-page-header #shop-desktop-breadcrumb .breadcrumb-item i {
+    margin: 0 6px;
+    font-size: 10px;
+}
+
+.desktop-shop-page-header #shop-desktop-breadcrumb .breadcrumb-item {
+    display: flex;
+    align-items: baseline;
+    font-size: 13px;
+}
+.desktop-shop-page-header #shop-desktop-breadcrumb .breadcrumb-item + .breadcrumb-item {
+    padding-left: 0 !important;
+}

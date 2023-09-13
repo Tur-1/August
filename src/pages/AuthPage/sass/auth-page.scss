@@ -1,0 +1,99 @@
+@media only screen and (max-width: 767px) {
+    .social-buttons li a {
+        font-size: 12px !important;
+    }
+    .auth-form-content form button[type="submit"] {
+        font-size: 13px !important;
+        padding: 10px !important;
+    }
+}
+.auth-container {
+    padding: 0 7px;
+    background-color: $bg-primary;
+    border-radius: 10px;
+}
+
+.auth-tabs-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+.auth-head-tab button {
+    color: #363636;
+    font-weight: 600;
+    font-size: 15px;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border: none !important;
+}
+.auth-head-tab button.active {
+    color: #51c0a9 !important;
+    border-bottom: 2px solid #51c0a9 !important;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+    padding: 0.2rem !important;
+    border-radius: 0 !important;
+}
+
+.google-github-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    margin: 15px 0 25px;
+}
+
+.google-github-buttons li a {
+    border-radius: 5px;
+    padding: 8px;
+    color: #fff;
+    display: block;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 14px;
+}
+
+.auth-form-content form .form-floating > .form-control {
+    height: calc(3.3rem + 2px) !important;
+}
+
+.auth-form-content form button[type="submit"] {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px;
+}
+
+.auth-form-content .text-danger {
+    font-size: 12px;
+}
+.gender-btns {
+    display: inline-block;
+    margin: 5px;
+}
+
+.gender-btns label {
+    background: #fff;
+    color: #999;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    transition: all 0.2s;
+    padding: 5px 15px !important;
+    font-size: 13px !important;
+    cursor: pointer;
+}
+
+.btn-check:checked + .btn-outline-secondary,
+.btn-check:active + .btn-outline-secondary,
+.btn-outline-secondary:active,
+.btn-outline-secondary.active {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.base-bottom-offcanvas .offcanvas-body .auth-container {
+    border: none !important;
+}

@@ -1,0 +1,83 @@
+@media screen and (display-mode: standalone) {
+    .mobile-offcanvas-filter-footer {
+        padding: 20px 10px !important;
+    }
+    .shop-page-mobile-section {
+        padding-top: 96px !important;
+    }
+}
+.shop-page-mobile-section {
+    padding-top: 83px;
+}
+.mobile-shop-page-header {
+    border: 1px solid #dee2e6;
+    border-top: none !important;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 44px;
+    background-color: $bg-primary;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 999;
+}
+.mobile-shop-page-header .sort-filter-btns {
+    background-color: transparent !important;
+    width: 100% !important;
+    border: none !important;
+    color: rgb(26, 26, 26);
+    padding: 8px;
+    font-weight: 500;
+    font-size: 15px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mobile-shop-page-header .sort-filter-btns i {
+    font-size: 12px;
+    margin-right: 2px;
+}
+
+.mobile-header-categories-warp {
+    margin-top: 0.7rem;
+}
+
+.mobile-header-categories-warp .mobile-categories-row::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-header-categories-warp .mobile-categories-row {
+    display: flex;
+    overflow-x: scroll !important;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+.mobile-header-categories-warp .mobile-categories-row .category-link {
+    display: flex;
+    align-items: center;
+    margin: 1px 5px;
+    box-sizing: border-box;
+    border-color: #000000;
+    background-color: #c1c1c12e;
+    padding: 0 5px !important;
+    border-radius: 4px;
+    width: max-content !important;
+    border: 1px solid #c1c1c12e !important;
+    color: #000000;
+    font-size: 11.4px !important;
+    font-weight: 500;
+    height: 30px;
+}
+.mobile-header-categories-warp .mobile-categories-row .active-category-link {
+    color: $bg-green !important;
+    border-color: $bg-green !important;
+    background-color: rgba(81, 192, 169, 0.05);
+}
+
+.mobile-header-categories-warp .mobile-categories-row .category-swiper-slide:last-child {
+    display: flex;
+    align-items: center;
+    margin-right: 15px !important;
+}

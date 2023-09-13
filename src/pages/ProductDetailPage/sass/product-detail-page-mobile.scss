@@ -1,0 +1,51 @@
+@media only screen and (max-width: 767px) {
+    .title-detail {
+        font-size: 18px !important;
+    }
+
+    .product-detail-title span {
+        font-size: 14px !important;
+    }
+
+    .product-detail-price span {
+        font-size: 14px !important;
+    }
+
+    .tabs-description-additionalInfo-reviews .nav.nav-tabs.product-detail .nav-item .nav-link.active {
+        box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
+    }
+
+    .tabs-description-additionalInfo-reviews .nav-tabs .nav-item a {
+        font-size: 12px !important;
+    }
+
+    .reviews-area .review-form form button {
+        font-size: 14px !important;
+    }
+
+    .reviews-area .reviews-list .review-item .date {
+        font-size: 10px !important;
+    }
+
+    .reviews-area .reviews-list .review-item {
+        font-size: 13px !important;
+    }
+
+    .reviews-area .reviews-list .review-item .review-reply {
+        margin-left: 3px !important;
+    }
+    .tabs-description-additionalInfo-reviews .nav-tabs {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr 1fr !important;
+    }
+    .tabs-description-additionalInfo-reviews .nav-tabs .nav-item {
+        text-align: center !important;
+    }
+
+    .product-detail-brand {
+        margin-top: 10px !important;
+    }
+    .product-detail-container {
+        margin-top: 1px !important;
+    }
+}

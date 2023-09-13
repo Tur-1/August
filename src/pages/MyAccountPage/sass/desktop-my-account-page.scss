@@ -1,0 +1,29 @@
+.order-card .card .card-body h5 {
+    font-size: 14px !important;
+}
+
+.order-card div {
+    font-size: 13px !important;
+}
+.account-desktop-tabs-btns {
+    color: #444;
+    padding: 20px;
+    font-size: 17px;
+    font-weight: 500;
+}
+.account-desktop-tabs-btns.active {
+    color: #000 !important;
+    border-bottom: 3px solid #51c0a9 !important;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+}
+.account-desktop-tabs-btns .icon-circle {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 100%;
+    color: rgb(143 143 143);
+    margin-right: 7px;
+    font-size: 20px;
+    border: 1px solid #eee;
+}

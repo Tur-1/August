@@ -1,0 +1,30 @@
+.base-form-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #dee2e661;
+    padding: 4px;
+}
+.base-form-footer button {
+    background-color: transparent;
+}
+.base-form-footer .cancel-btn {
+    color: #444;
+    border-right: 1px solid rgb(123 123 123 / 27%);
+}
+.base-form-footer .submit-btn {
+    color: $bg-green;
+    position: relative;
+}
+button[type="submit"] span,
+.spinner-border {
+    transition: all 0.2s ease-in-out;
+}
+
+.base-form-footer .submit-btn .spinner-border {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+}
+.base-form-footer .submit-btn .spinner-border.opacity-100 {
+    left: 62% !important;
+}

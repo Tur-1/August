@@ -1,0 +1,28 @@
+.base-checkbox-warp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.base-checkbox-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15px;
+    margin-right: 10px;
+    width: 15px;
+    border: 1px solid rgb(0 0 0 / 26%);
+    border-radius: 100% !important;
+    place-content: center;
+    transform: scale(1.1);
+}
+.base-checkbox-input input {
+    border-radius: 100% !important;
+    margin-top: 0 !important;
+    border: none !important;
+    width: 90% !important;
+    height: 90% !important;
+    vertical-align: baseline !important;
+    background-position: initial !important;
+}

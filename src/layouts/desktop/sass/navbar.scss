@@ -1,0 +1,85 @@
+/******** desktop header *************/
+.desktop-navbar {
+    position: fixed !important;
+    border-bottom: 1px solid #cccccc75;
+    top: 0 !important;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: $bg-primary !important;
+}
+.desktop-navbar nav {
+    height: 60px;
+}
+nav {
+    background-color: $bg-primary;
+}
+.desktop-navbar .navbar-collapse {
+    background-color: $bg-primary;
+    padding: 10px;
+}
+.navbar-brand {
+    margin-right: 60px;
+    font-size: 24px;
+    font-family: "Spartan", sans-serif;
+
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.navbar-nav li {
+    padding: 0 17px;
+}
+
+.navbar-nav > li > a {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.navbar-nav .active {
+    color: $bg-green;
+}
+
+.navbar-sections {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.nav-icons-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-icons {
+    position: relative;
+    margin: 0 10px;
+    font-size: 24px;
+    line-height: 1;
+    display: inline-block;
+    width: 1em;
+}
+
+.nav-icons img {
+    width: 100%;
+    max-width: 25px;
+    opacity: 0.8;
+}
+
+.badge-circle {
+    position: absolute;
+    right: -11px;
+    top: 2px;
+    font-size: 12px;
+    background-color: #cf222e;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    color: white;
+}

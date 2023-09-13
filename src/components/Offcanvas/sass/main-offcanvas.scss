@@ -1,0 +1,63 @@
+.main-offcanvas {
+    position: fixed;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    border: none !important;
+    height: 100%;
+
+    z-index: 99999999999999;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    transition: transform 0.2s ease-in-out;
+    background-color: white;
+    background-clip: padding-box;
+    outline: 0;
+}
+.main-offcanvas.right-offcanvas {
+    transform: translateX(100%);
+}
+.main-offcanvas.left-offcanvas {
+    transform: translateX(-100%);
+}
+.main-offcanvas.right-offcanvas.show {
+    transform: translateX(0);
+}
+.main-offcanvas.left-offcanvas.show {
+    transform: translateX(0);
+}
+
+.main-offcanvas .main-offcanvas-container {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-offcanvas .main-offcanvas-header {
+    display: flex;
+    border-bottom: 1px solid rgba(232, 232, 232, 0.431372549);
+    padding: 1rem 10px 10px 10px !important;
+    align-items: center;
+}
+.main-offcanvas-header-close-btn {
+    border: none !important;
+    background: none;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+}
+.main-offcanvas-body {
+    overflow-y: auto;
+}
+.main-offcanvas-header-close-btn i {
+    color: #000000 !important;
+    font-size: 20px !important;
+    margin-right: 1rem;
+}
+.main-offcanvas-header-close-btn i::before,
+.main-offcanvas-header-close-btn span {
+    font-weight: 600 !important;
+}

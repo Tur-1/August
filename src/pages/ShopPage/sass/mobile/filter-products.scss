@@ -1,0 +1,98 @@
+.mobile-filter {
+    height: 100%;
+}
+.mobile-filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-filter-header .title {
+    font-weight: 600;
+    font-size: 18px;
+}
+.mobile-filter-header .clear-filter-btn {
+    background-color: transparent;
+    color: #787878;
+    font-size: 13px;
+}
+
+.show-products-btn {
+    width: 90%;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(145, 145, 145, 0.37);
+    padding: 6px 0;
+}
+.filter-item .filter-item-name {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: #000;
+    background-color: transparent !important;
+    padding: 4px 10px;
+}
+.filter-item .filtered-items {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+.filter-item .filtered-items .filtered-items-card:first-child {
+    margin-left: 10px;
+}
+.filter-item .filtered-items .filtered-items-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 5px;
+
+    background-color: rgba(230, 230, 230, 0.7215686275);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+.filter-item .filtered-items .filtered-items-card:last-child {
+    margin-right: 25px;
+}
+.filter-item .filtered-items .filtered-items-card .name {
+    margin-right: 5px;
+}
+.filtered-items .filtered-items-card span,
+.filtered-items .filtered-items-card i {
+    color: #939393;
+}
+
+.main-offcanvas-body {
+    padding: 0 !important;
+}
+.main-offcanvas-body .list-group .base-checkbox-warp {
+    padding: 10px;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.282);
+}
+.main-offcanvas-body .list-group label:last-child {
+    margin-bottom: 50px;
+}
+.filter-checkbox-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    border: 1px solid rgb(126 126 126 / 28%);
+    border-radius: 100% !important;
+}
+.filter-checkbox-input input {
+    border-radius: 100% !important;
+    margin-top: 0 !important;
+    border: none !important;
+    width: 80% !important;
+    height: 80% !important;
+    vertical-align: baseline !important;
+    background-position: initial !important;
+}

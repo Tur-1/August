@@ -1,0 +1,89 @@
+.checkout-product {
+    position: relative;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    border: 0.4px solid rgb(51 51 51 / 10%);
+    width: 100%;
+    padding: 10px;
+    z-index: 1;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.checkout-product .checkout-product-image {
+    height: 115px;
+    width: 100px;
+    margin-right: 7px;
+}
+
+.checkout-product .checkout-product-image img {
+    height: 100%;
+    width: 100%;
+}
+.checkout-product-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.checkout-product-details .checkout-product-details-col:first-child {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 60%;
+}
+
+.checkout-product .checkout-product-details .brand-name {
+    color: #333 !important;
+    font-size: 14px;
+    font-weight: 700 !important;
+}
+
+.checkout-product-details .checkout-product-details-col:first-child a,
+.checkout-product-details .checkout-product-details-col:first-child span {
+    margin-bottom: 6px;
+    color: #666666;
+    font-size: 12px;
+}
+.checkout-product .checkout-product-details .brand-name {
+    color: #333 !important;
+    font-size: 14px;
+    font-weight: 700 !important;
+}
+
+.checkout-product-details .checkout-product-details-col:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: auto;
+    width: 40%;
+}
+
+.checkout-product-details .checkout-product-details-col:last-child .price {
+    color: #51c0a9 !important;
+    font-size: 15px;
+}
+.checkout-product-details .checkout-product-details-col:last-child .discounted-price {
+    margin-bottom: 5px;
+    color: #999;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-decoration: line-through !important;
+}
+
+.checkout-product .out-of-stock {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 13.2px;
+    color: rgb(220, 53, 69);
+    padding: 0 4px;
+    background-color: rgba(248, 215, 218, 0.9490196078);
+    border-color: #f5c2c7;
+    border-bottom-left-radius: 5px;
+}
+
+.checkout-product-qty {
+    font-size: 11px;
+}

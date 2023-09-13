@@ -1,0 +1,30 @@
+/************ breadcrumb *************/
+.breadcrumb-wrap {
+    background-color: $bg-secondary;
+}
+
+.breadcrumb-wrap .breadcrumb {
+    padding: 1rem !important;
+    color: #6e6e6e;
+    display: flex;
+    align-items: end;
+    padding: 0;
+    text-transform: capitalize;
+    color: #6e6e6e;
+    font-size: 0.875rem;
+    background: none;
+    margin: 0;
+    border-radius: 0;
+}
+
+.breadcrumb-wrap .breadcrumb .breadcrumb-item i {
+    margin: 0 7px;
+    font-size: 10px;
+}
+
+.current-breadcrumb-item {
+    margin-left: 3px;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    content: none !important;
+}
