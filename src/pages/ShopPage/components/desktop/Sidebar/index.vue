@@ -17,10 +17,7 @@ const route = useRoute();
 watch(
   () => route.query,
   async (value) => {
-    await getProducts({
-      category_url: route.params.categoryUrl,
-      query: route.query,
-    });
+    await getProducts();
   },
   { deep: true }
 );
@@ -28,11 +25,16 @@ watch(
 <template>
   <div class="shop-page-sidebar" v-if="!skeletonLoading.isLoading">
     <Categories />
-    <label class="fw-700 mb-3 sidebar-border-top">Brand</label>
+    <label class="fw-700 mb-3 sidebar-border-top" for="brands-list">
+      Brand
+    </label>
+
     <Brands />
-    <label class="fw-700 mb-3 sidebar-border-top">Color</label>
+    <label class="fw-700 mb-3 sidebar-border-top" for="colors-list">
+      Color
+    </label>
     <Colors />
-    <label class="fw-700 mb-3 sidebar-border-top">Size</label>
+    <label class="fw-700 mb-3 sidebar-border-top" for="sizes-list">Size</label>
     <SizeOptions />
   </div>
 

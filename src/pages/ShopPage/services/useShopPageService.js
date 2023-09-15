@@ -9,12 +9,15 @@ import
 import useShopPageApi from '@/pages/ShopPage/api/useShopPageApi'
 import useRouterStore from '@/router/RouterStore';
 import { skeletonLoading } from "@/helpers";
+import { useRoute } from "vue-router";
 
 
 
 
 export default function useShopPageService()
 {
+    const route = useRoute();
+
     const routerService = useRouterStore();
 
 
@@ -23,12 +26,12 @@ export default function useShopPageService()
         const CategoriesStore = useCategoriesStore();
 
 
-        skeletonLoading.show();
+        skeletonLoading.show('sidebar');
 
         try
         {
 
-            let response = await useShopPageApi.getCategory(category_url);
+            let response = await useShopPageApi.getCategory(route.params.categoryUrl);
 
             CategoriesStore.category = response.data.category;
             CategoriesStore.categoryChildren = response.data.children;
@@ -44,13 +47,13 @@ export default function useShopPageService()
 
         }
 
-        skeletonLoading.hide();
+        skeletonLoading.hide('sidebar');
 
 
     }
-    const getProducts = async ({ url, query, category_url }) =>
+    const getProducts = async (url) =>
     {
-        skeletonLoading.show();
+        skeletonLoading.show('products');
 
         const ProductsStore = useProductsStore();
         const brandsStore = useBrandsStore();
@@ -62,9 +65,9 @@ export default function useShopPageService()
 
             let response = await useShopPageApi.getProducts(
                 {
-                    category_url: category_url,
+                    category_url: route.params.categoryUrl,
                     url: url,
-                    query: query
+                    query: route.query
                 });
 
             ProductsStore.products = response.data.products.data;
@@ -80,12 +83,88 @@ export default function useShopPageService()
             routerService.redirectToRoute('pageNotFound');
         }
 
-        skeletonLoading.hide();
+        skeletonLoading.hide('products');
 
+    }
+
+    const getBrands = async () =>
+    {
+        const brandsStore = useBrandsStore();
+        try
+        {
+
+            let response = await useShopPageApi.getBrands(route.params.categoryUrl);
+
+            brandsStore.brands = response.data.brands;
+
+        } catch (error)
+        {
+            routerService.redirectToRoute('pageNotFound');
+        }
+
+    }
+    const getSizes = async () =>
+    {
+        const sizeStore = useSizesStore();
+        try
+        {
+
+            let response = await useShopPageApi.getSizes(route.params.categoryUrl);
+
+            sizeStore.sizes = response.data.sizes;
+
+        } catch (error)
+        {
+            routerService.redirectToRoute('pageNotFound');
+        }
+
+    }
+    const getColors = async () =>
+    {
+        const colorsStore = useColorsStore();
+        try
+        {
+
+            let response = await useShopPageApi.getColors(route.params.categoryUrl);
+
+            colorsStore.colors = response.data.colors;
+
+        } catch (error)
+        {
+            routerService.redirectToRoute('pageNotFound');
+        }
+
+    }
+    const getProductsTotal = async ({ query, category_url }) =>
+    {
+
+        const ProductsStore = useProductsStore();
+        try
+        {
+
+            let response = await useShopPageApi.getProductsTotal(
+                {
+                    category_url: category_url,
+                    query: query
+                });
+
+
+            ProductsStore.total = response.data.total;
+
+
+        } catch (error)
+        {
+
+        }
     }
     return {
         getProducts,
-        getCategory
+        getCategory,
+        getProductsTotal,
+        getColors,
+        getBrands,
+        getSizes,
+
     }
 
 

@@ -3,7 +3,10 @@
     <span class="current-category" v-if="!skeletonLoading.isLoading">
       {{ CategoriesStore.category.name }}
     </span>
-    <span class="current-category placeholder-wave" v-if="skeletonLoading.isLoading">
+    <span
+      class="current-category placeholder-wave"
+      v-if="skeletonLoading.isLoading"
+    >
       <span class="placeholder rounded-1 w-50"></span>
     </span>
   </div>

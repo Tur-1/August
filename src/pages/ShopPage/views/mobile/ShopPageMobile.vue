@@ -1,6 +1,6 @@
 <script setup>
-import { useRoute } from "vue-router";
-import { Products } from "@/pages/ShopPage/components/desktop";
+import ProductCard from "@/components/ProductCard/index.vue";
+
 import {
   Categories,
   FilterProducts,
@@ -12,7 +12,6 @@ import { useProductsStore } from "@/pages/ShopPage/stores";
 
 const { getProducts } = useShopPageService();
 const ProductsStore = useProductsStore();
-const route = useRoute();
 </script>
 
 <template>
@@ -25,17 +24,11 @@ const route = useRoute();
     <Categories />
     <div class="container">
       <div class="row">
-        <Products />
+        <ProductCard :products="ProductsStore.products" />
+
         <MobilePagination
           :pagination="ProductsStore.pagination"
-          @onPageChange="
-            async (url) =>
-              await getProducts({
-                url: url,
-                query: route.query,
-                category_url: route.params.categoryUrl,
-              })
-          "
+          @onPageChange="getProducts"
           v-if="ProductsStore.count !== 0"
         />
       </div>

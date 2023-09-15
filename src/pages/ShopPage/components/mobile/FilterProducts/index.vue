@@ -5,35 +5,18 @@ import {
   SizeOptions,
 } from "@/pages/ShopPage/components/desktop";
 import { useBottomOffcanvas, BottomOffcanvas } from "@/components/Offcanvas";
-import { useRoute, useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 import FilterHeader from "@/pages/ShopPage/components/mobile/FilterProducts/FilterHeader.vue";
 import FilterItem from "@/pages/ShopPage/components/mobile/FilterProducts/FilterItem.vue";
-import useShopPageService from "@/pages/ShopPage/services/useShopPageService";
-import { FilterStore, useProductsStore } from "@/pages/ShopPage/stores";
-import { watch } from "vue";
+import useProductsFilterService from "@/pages/ShopPage/services/useProductsFilterService";
+import { useProductsStore } from "@/pages/ShopPage/stores";
 
-const { getProducts } = useShopPageService();
 const route = useRoute();
-const router = useRouter();
 
 const productsStore = useProductsStore();
 
-const filterProducts = async () => {
-  await getProducts({
-    category_url: route.params.categoryUrl,
-    query: route.query,
-  });
-};
-function clearAll() {
-  for (const iterator in FilterStore) {
-    FilterStore[iterator] = [];
-  }
-  useBottomOffcanvas.close("filter");
-}
-
-const removeQuery = async (index, item, queryString) => {
-  // FilterStore?.[queryString].splice(index, 1);
-};
+const { clearAll, filterProducts, removeQuery, countProductsTotal } =
+  useProductsFilterService();
 </script>
 
 <template>
@@ -56,8 +39,8 @@ const removeQuery = async (index, item, queryString) => {
       <FilterItem
         title="brands"
         offcanvasId="brands-filter"
+        @onClose="countProductsTotal"
         :FilteredItems="route.query.brand"
-        @onClose="filterProducts('brand')"
         @removeQuery="({ index, item }) => removeQuery(index, item, 'brand')"
       >
         <Brands />
@@ -65,9 +48,9 @@ const removeQuery = async (index, item, queryString) => {
       <FilterItem
         title="Colors"
         offcanvasId="colors-filter"
+        @onClose="countProductsTotal"
         @removeQuery="({ index, item }) => removeQuery(index, item, 'color')"
         :FilteredItems="route.query.color"
-        @onClose="filterProducts('color')"
       >
         <Colors />
       </FilterItem>
@@ -75,7 +58,7 @@ const removeQuery = async (index, item, queryString) => {
         title="Size"
         offcanvasId="sizes-filter"
         :FilteredItems="route.query.size"
-        @onClose="filterProducts('size')"
+        @onClose="countProductsTotal"
         @removeQuery="({ index, item }) => removeQuery(index, item, 'size')"
       >
         <SizeOptions />
@@ -84,7 +67,7 @@ const removeQuery = async (index, item, queryString) => {
     <template #footer>
       <button
         type="button"
-        @click="useBottomOffcanvas.close('filter')"
+        @click="filterProducts"
         class="btn btn-primary show-products-btn"
       >
         show products ({{ productsStore.total }})

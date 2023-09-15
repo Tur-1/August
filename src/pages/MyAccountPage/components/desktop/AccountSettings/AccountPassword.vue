@@ -31,7 +31,12 @@ const openModal = () => {
           </header>
         </div>
 
-        <input class="w-100 p-2" placeholder="*********" disabled="" />
+        <input
+          class="w-100 p-2"
+          id="password-field"
+          placeholder="*********"
+          disabled=""
+        />
       </div>
     </div>
   </div>

@@ -1,13 +1,21 @@
 <template>
-  <ol class="breadcrumb" id="shop-desktop-breadcrumb" v-if="!skeletonLoading.isLoading">
+  <ol
+    class="breadcrumb"
+    id="shop-desktop-breadcrumb"
+    v-if="!skeletonLoading.isLoading"
+  >
     <li class="breadcrumb-item">
       <Link to="/"> Home </Link>
     </li>
 
-    <li class="breadcrumb-item" v-for="(parent, index) in CategoryStore.parentsCategory" :key="parent.id">
+    <li
+      class="breadcrumb-item"
+      v-for="(parent, index) in CategoryStore.parentsCategory"
+      :key="parent.id"
+    >
       <i class="bi bi-chevron-right"></i>
       <Link :to="{ name: 'shop', params: { categoryUrl: parent.url } }">
-      {{ parent.name }}
+        {{ parent.name }}
       </Link>
     </li>
 

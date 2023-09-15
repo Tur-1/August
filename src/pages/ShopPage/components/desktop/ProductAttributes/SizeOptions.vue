@@ -1,5 +1,5 @@
 <template>
-  <div class="list-group">
+  <div class="list-group" id="sizes-list">
     <label
       class="base-checkbox-warp"
       v-for="(size, index) in SizesStore.sizes"

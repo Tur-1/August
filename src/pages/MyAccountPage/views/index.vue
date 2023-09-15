@@ -14,11 +14,7 @@ import useUserAddressService from "@/pages/MyAccountPage/services/useUserAddress
 const { getUserOrders } = useMyAccountService();
 const { getUserAddresses } = useUserAddressService();
 
-onMounted(async () =>
-{
-  Promise.all([
-    getUserAddresses(),
-    getUserOrders(),
-  ]);
+onMounted(() => {
+  Promise.all([getUserAddresses(), getUserOrders()]);
 });
 </script>

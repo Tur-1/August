@@ -42,12 +42,19 @@ export const isNotFound = (error) =>
 }
 export const skeletonLoading = reactive({
     isLoading: false,
-    show()
+    item: null,
+    show(item = null)
     {
+        if (isNotNull(item))
+        {
+            this.item = item;
+        }
         this.isLoading = true;
     },
-    hide()
+    hide(item = null)
     {
+        this.item = null;
+
         this.isLoading = false;
     }
 });

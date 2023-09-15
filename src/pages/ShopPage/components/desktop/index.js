@@ -10,7 +10,6 @@ import Brands from "@/pages/ShopPage/components/desktop/ProductAttributes/Brands
 import Colors from "@/pages/ShopPage/components/desktop/ProductAttributes/Colors.vue";
 import Sidebar from "@/pages/ShopPage/components/desktop/Sidebar/index.vue";
 import SidebarSkeleton from "@/pages/ShopPage/components/desktop/Sidebar/SidebarSkeleton.vue";
-import Products from "@/pages/ShopPage/components/desktop/Products/index.vue";
 import Header from "@/pages/ShopPage/components/desktop/Header/index.vue";
 import SortProductsSkeleton from "@/pages/ShopPage/components/desktop/SortProducts/SortProductsSkeleton.vue";
 
@@ -27,7 +26,6 @@ export
     Breadcrumb,
     BackToButtonSkeleton,
     SidebarSkeleton,
-    Products,
 
     SizeOptions,
     Brands,

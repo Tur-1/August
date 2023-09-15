@@ -1,5 +1,5 @@
 <template>
-  <div class="list-group">
+  <div class="list-group" id="colors-list">
     <label
       class="base-checkbox-warp"
       v-for="(color, index) in ColorsStore.colors"

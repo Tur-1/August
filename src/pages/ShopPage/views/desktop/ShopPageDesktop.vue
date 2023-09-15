@@ -2,12 +2,10 @@
 import { Header, Sidebar } from "@/pages/ShopPage/components/desktop";
 import Pagination from "@/components/Pagination/index.vue";
 import { useProductsStore } from "@/pages/ShopPage/stores";
-import { useRoute } from "vue-router";
-import { Products } from "@/pages/ShopPage/components/desktop";
+import ProductCard from "@/components/ProductCard/index.vue";
 import useShopPageService from "@/pages/ShopPage/services/useShopPageService";
 
 const { getProducts } = useShopPageService();
-const route = useRoute();
 
 const ProductsStore = useProductsStore();
 </script>
@@ -20,20 +18,13 @@ const ProductsStore = useProductsStore();
       </div>
       <div class="col-xl-10 col-lg-10 col-md-9 col-sm-12 col-12">
         <div class="row">
-          <Products />
+          <ProductCard :products="ProductsStore.products" />
         </div>
         <div class="d-flex justify-content-center">
           <Pagination
             v-if="ProductsStore.count !== 0"
             :links="ProductsStore.pagination.links"
-            @onPageChange="
-              async (url) =>
-                await getProducts({
-                  url: url,
-                  query: route.query,
-                  category_url: route.params.categoryUrl,
-                })
-            "
+            @onPageChange="getProducts"
           />
         </div>
       </div>

@@ -10,6 +10,7 @@ export default function useSortProductsService()
 {
 
     const { getProducts } = useShopPageService();
+    let isOpen = ref(false);
 
     let activeSort = ref(SortProductsStore.list[0].name);
 
@@ -26,7 +27,13 @@ export default function useSortProductsService()
     };
     const showSortDropdown = () =>
     {
-        $(".sort-by-dropdown").slideToggle();
+        if (isOpen.value)
+        {
+            isOpen.value = false;
+        } else
+        {
+            isOpen.value = true;
+        }
     };
 
     const getActiveSort = (querySort) =>
@@ -43,7 +50,8 @@ export default function useSortProductsService()
         sortPorudtcs,
         showSortDropdown,
         activeSort,
-        getActiveSort
+        getActiveSort,
+        isOpen
     }
 
 

@@ -12,13 +12,9 @@ const route = useRoute();
 const router = useRouter();
 const { getCategory, getProducts } = useShopPageService();
 
-onMounted(async () => {
-  await getCategory(route.params.categoryUrl),
-    await getProducts({
-      query: route.query,
-      category_url: route.params.categoryUrl,
-    }),
-    getRouteQueryString(route.query);
+onMounted(() => {
+  getRouteQueryString(route.query);
+  Promise.all([getCategory(), getProducts()]);
 });
 
 watch(
