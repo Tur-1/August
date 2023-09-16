@@ -10,7 +10,7 @@
         :for="`address_label-${address.address_id}`"
         style="width: 90%"
       >
-        <div class="form-check">
+        <div class="form-check align-self-start">
           <input
             class="form-check-input"
             type="radio"
@@ -20,7 +20,7 @@
             :id="`address_label-${address.address_id}`"
           />
         </div>
-        <div class="d-flex flex-column ms-2">
+        <div class="d-flex flex-column ms-3">
           {{ address.full_name }}
           <span class="text-secondary" style="font-size: 11px">
             {{ address.phone_number }}
@@ -52,7 +52,6 @@
 </template>
 <script setup>
 import useUserAddressService from "@/pages/MyAccountPage/services/useUserAddressService";
-
 import { AddressCardActions } from "@/pages/MyAccountPage/components";
 import { useCheckoutStore } from "@/pages/CheckoutPage/stores";
 import { useAddressStore } from "@/pages/MyAccountPage/stores";

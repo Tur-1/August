@@ -1,7 +1,7 @@
 <template>
   <div class="review-reply">
-    <i class="fa-solid fa-reply fa-flip-both mb-auto me-3"></i>
-    <div class="review-user-image me-3">
+    <i class="bi bi-arrow-return-right me-3"></i>
+    <div class="review-user-image me-2">
       <img
         :src="reply.user.gender == 'Male' ? maleAvatar : femaleAvatar"
         alt=""

@@ -18,7 +18,6 @@ export default function useCheckoutService()
     const getCheckoutContent = async () =>
     {
 
-        skeletonLoading.show();
         try
         {
             let response = await useCheckoutApi.getCheckoutContent();
@@ -35,7 +34,6 @@ export default function useCheckoutService()
         {
             useRouterStore().redirectUnauthorizedUser(error);
         }
-        skeletonLoading.hide();
     }
 
     const applyCoupon = async () =>

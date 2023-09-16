@@ -1,6 +1,7 @@
 <script setup>
 import { useCouponStore, useCheckoutStore } from "@/pages/CheckoutPage/stores";
 import useCheckoutService from "@/pages/CheckoutPage/services/useCheckoutService";
+import { skeletonLoading } from "@/helpers";
 
 const { applyCoupon } = useCheckoutService();
 const couponStore = useCouponStore();
@@ -8,7 +9,7 @@ const couponStore = useCouponStore();
 
 <template>
   <div class="card_checkout_coupon_form mb-4">
-    <div class="card">
+    <div class="card" v-if="!skeletonLoading.isLoading">
       <div class="checkout_coupon_form">
         <input
           type="text"
@@ -25,7 +26,17 @@ const couponStore = useCouponStore();
         </button>
       </div>
     </div>
-
+    <div
+      class="card placeholder-wave border-0"
+      v-if="skeletonLoading.isLoading"
+    >
+      <div class="checkout_coupon_form placeholder">
+        <span
+          class="form-control border-0 shadow-none bg-transparent p-2 w-100"
+          style="height: 40px"
+        />
+      </div>
+    </div>
     <div class="m-2">
       <span
         :class="couponStore.error ? 'text-danger' : 'text-primary'"

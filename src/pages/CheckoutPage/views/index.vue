@@ -9,17 +9,19 @@ import {
 } from "@/pages/CheckoutPage/components";
 import { onMounted } from "vue";
 import useCheckoutService from "@/pages/CheckoutPage/services/useCheckoutService";
-import { isDesktop } from "@/helpers";
+import { isDesktop, skeletonLoading } from "@/helpers";
 
 const { getCheckoutContent } = useCheckoutService();
 
 onMounted(async () => {
+  skeletonLoading.show();
   await getCheckoutContent();
+  skeletonLoading.hide();
 });
 </script>
 <template>
   <section>
-    <BaseBreadcrumb activePage="checkout" v-if="isDesktop" />
+    <BaseBreadcrumb activePage="checkout" class="bg-white" v-if="isDesktop" />
     <div class="container mt-3">
       <CheckoutHeader v-if="isDesktop" />
       <div class="row">

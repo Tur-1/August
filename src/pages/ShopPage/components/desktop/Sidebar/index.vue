@@ -17,7 +17,9 @@ const route = useRoute();
 watch(
   () => route.query,
   async (value) => {
-    await getProducts();
+    await getProducts({
+      query: value,
+    });
   },
   { deep: true }
 );

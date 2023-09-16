@@ -51,14 +51,13 @@ export default function useShopPageService()
 
 
     }
-    const getProducts = async (url) =>
+    const getProducts = async ({ query, url }) =>
     {
         skeletonLoading.show('products');
 
         const ProductsStore = useProductsStore();
         const brandsStore = useBrandsStore();
-        const colorsStore = useColorsStore();
-        const sizeStore = useSizesStore();
+
 
         try
         {
@@ -67,15 +66,13 @@ export default function useShopPageService()
                 {
                     category_url: route.params.categoryUrl,
                     url: url,
-                    query: route.query
+                    query: query
                 });
 
             ProductsStore.products = response.data.products.data;
             ProductsStore.total = response.data.products.meta.pagination.total;
             ProductsStore.pagination = response.data.products.meta.pagination;
             brandsStore.brands = response.data.brands;
-            colorsStore.colors = response.data.colors;
-            sizeStore.sizes = response.data.sizeOptions;
 
 
         } catch (error)

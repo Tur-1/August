@@ -10,6 +10,7 @@ import ProductDetails from "@/pages/CheckoutPage/components/CheckoutProduct/Prod
 import ProductPrice from "@/pages/CheckoutPage/components/CheckoutProduct/ProductPrice.vue";
 import ProductSkeleton from "@/pages/CheckoutPage/components/CheckoutProduct/ProductSkeleton.vue";
 import CheckoutDetailsSkeleton from "@/pages/CheckoutPage/components/CheckoutDetails/CheckoutDetailsSkeleton.vue";
+import AddressCardSkeleton from "@/pages/CheckoutPage/components/CheckoutAddresses/AddressCardSkeleton.vue";
 
 export
 {
@@ -23,5 +24,6 @@ export
     ProductDetails,
     ProductPrice,
     ProductSkeleton,
-    CheckoutDetailsSkeleton
+    CheckoutDetailsSkeleton,
+    AddressCardSkeleton
 }

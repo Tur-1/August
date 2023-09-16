@@ -6,28 +6,26 @@ import { useRoute, useRouter } from "vue-router";
 export default function useProductsFilterService()
 {
     const route = useRoute();
-    const router = useRouter();
-
     const {
         getProducts,
         getProductsTotal,
     } = useShopPageService();
 
-    const filterProducts = async () =>
+    const filterProducts = async ({ query }) =>
     {
         closeFilterOffcanvas();
 
-        await getProducts();
+        await getProducts({ query: query });
     };
 
-    const clearAll = () =>
+    const clearAll = ({ query }) =>
     {
         for (const iterator in FilterStore)
         {
             FilterStore[iterator] = [];
         }
 
-        filterProducts();
+        filterProducts({ query: query });
     }
 
     const closeFilterOffcanvas = () =>

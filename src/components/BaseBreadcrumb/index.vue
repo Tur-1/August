@@ -1,5 +1,5 @@
 <template>
-  <div class="breadcrumb-wrap">
+  <div class="breadcrumb-wrap" :class="class">
     <div class="container">
       <div class="row">
         <div class="breadcrumb text-wrap">
@@ -17,5 +17,6 @@
 <script setup>
 defineProps({
   activePage: String,
+  class: String,
 });
 </script>

@@ -51,13 +51,13 @@ export default function useProductPageService()
         skeletonLoading.hide();
 
     };
-    const getProductReviews = async () =>
+    const getProductReviews = async (product_id) =>
     {
 
         try
         {
             let reviewsStore = useReviewsStore();
-            let response = await useProductPageApi.getProductReviews(productStore.product.id);
+            let response = await useProductPageApi.getProductReviews(product_id);
 
             reviewsStore.reviews = response.data.reviews;
 

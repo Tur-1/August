@@ -4,10 +4,16 @@ import {
   AddressForm,
 } from "@/pages/MyAccountPage/components";
 
-import { AddressCard } from "@/pages/CheckoutPage/components";
+import { skeletonLoading } from "@/helpers";
+import {
+  AddressCard,
+  AddressCardSkeleton,
+} from "@/pages/CheckoutPage/components";
 </script>
 <template>
   <NewAddressButton />
-  <AddressCard />
+  <AddressCard v-if="!skeletonLoading.isLoading" />
+  <AddressCardSkeleton v-if="skeletonLoading.isLoading" />
+
   <AddressForm />
 </template>

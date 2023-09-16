@@ -17,8 +17,12 @@ const productStore = useProductStore();
 const { getProductDetail, getRelatedProducts, getProductReviews } =
   useProductPageService();
 
-onMounted(() => {
-  Promise.all([getProductDetail(), getRelatedProducts(), getProductReviews()]);
+onMounted(async () => {
+  await getProductDetail();
+  Promise.all([
+    getRelatedProducts(),
+    getProductReviews(productStore.product.id),
+  ]);
 });
 </script>
 

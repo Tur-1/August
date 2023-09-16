@@ -24,7 +24,6 @@
               @click="
                 sortPorudtcs({
                   slug: sort.slug,
-                  categoryUrl: route.params.categoryUrl,
                 }),
                   useBottomOffcanvas.close('sort-products')
               "

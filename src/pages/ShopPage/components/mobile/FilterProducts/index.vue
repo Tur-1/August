@@ -9,7 +9,7 @@ import { useRoute } from "vue-router";
 import FilterHeader from "@/pages/ShopPage/components/mobile/FilterProducts/FilterHeader.vue";
 import FilterItem from "@/pages/ShopPage/components/mobile/FilterProducts/FilterItem.vue";
 import useProductsFilterService from "@/pages/ShopPage/services/useProductsFilterService";
-import { useProductsStore } from "@/pages/ShopPage/stores";
+import { FilterStore, useProductsStore } from "@/pages/ShopPage/stores";
 
 const route = useRoute();
 
@@ -33,7 +33,7 @@ const { clearAll, filterProducts, removeQuery, countProductsTotal } =
 
   <BottomOffcanvas id="filter">
     <template #header>
-      <FilterHeader @clearAll="clearAll" />
+      <FilterHeader @clearAll="clearAll(route.query)" />
     </template>
     <template #body>
       <FilterItem
@@ -67,7 +67,7 @@ const { clearAll, filterProducts, removeQuery, countProductsTotal } =
     <template #footer>
       <button
         type="button"
-        @click="filterProducts"
+        @click="filterProducts({ query: route.query })"
         class="btn btn-primary show-products-btn"
       >
         show products ({{ productsStore.total }})

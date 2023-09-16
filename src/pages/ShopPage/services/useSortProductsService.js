@@ -14,15 +14,14 @@ export default function useSortProductsService()
 
     let activeSort = ref(SortProductsStore.list[0].name);
 
-    const sortPorudtcs = async ({ slug: slug, categoryUrl: categoryUrl }) =>
+    const sortPorudtcs = async ({ slug: slug }) =>
     {
         FilterStore.sort = slug;
 
         getActiveSort(FilterStore.sort);
         await getProducts({
-            category_url: categoryUrl,
             query: FilterStore,
-        });
+        });;
 
     };
     const showSortDropdown = () =>

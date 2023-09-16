@@ -4,10 +4,13 @@ import Pagination from "@/components/Pagination/index.vue";
 import { useProductsStore } from "@/pages/ShopPage/stores";
 import ProductCard from "@/components/ProductCard/index.vue";
 import useShopPageService from "@/pages/ShopPage/services/useShopPageService";
+import { useRoute } from "vue-router";
 
 const { getProducts } = useShopPageService();
 
 const ProductsStore = useProductsStore();
+
+const route = useRoute();
 </script>
 <template>
   <section class="container">
@@ -24,7 +27,9 @@ const ProductsStore = useProductsStore();
           <Pagination
             v-if="ProductsStore.count !== 0"
             :links="ProductsStore.pagination.links"
-            @onPageChange="getProducts"
+            @onPageChange="
+              (url) => getProducts({ url: url, query: route.query })
+            "
           />
         </div>
       </div>

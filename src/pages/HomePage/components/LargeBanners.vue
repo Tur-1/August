@@ -6,7 +6,7 @@
   >
     <div class="carousel-inner">
       <div
-        v-for="(banner, index) in HomePageStore.largeBanners"
+        v-for="(banner, index) in homePageStore.largeBanners"
         class="carousel-item w-100 h-100"
         :class="{ active: index == 0 }"
       >
@@ -37,5 +37,7 @@
 </template>
 
 <script setup>
-import HomePageStore from "@/pages/HomePage/store/HomePageStore";
+import useHomePageStore from "@/pages/HomePage/store/HomePageStore";
+
+const homePageStore = useHomePageStore();
 </script>

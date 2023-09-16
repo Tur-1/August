@@ -15,7 +15,6 @@
           @click="
             sortPorudtcs({
               slug: sort.slug,
-              categoryUrl: route.params.categoryUrl,
             }),
               showSortDropdown()
           "

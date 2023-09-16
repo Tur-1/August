@@ -13,7 +13,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="container">
+  <section class="container">
     <div class="home-large-banners">
       <LargeBanners v-if="!skeletonLoading.isLoading" />
 
@@ -26,5 +26,5 @@ onMounted(() => {
     </div>
 
     <LatestProducts />
-  </div>
+  </section>
 </template>

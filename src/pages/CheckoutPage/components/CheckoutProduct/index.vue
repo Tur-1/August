@@ -1,5 +1,5 @@
 <template>
-  <template v-if="!skeletonLoading.isLoading">
+  <div class="card border-0 pb-0" v-if="!skeletonLoading.isLoading">
     <div
       v-for="(item, index) in CheckoutStore.products"
       :key="item.id"
@@ -14,7 +14,7 @@
         <ProductPrice :item="item" />
       </div>
     </div>
-  </template>
+  </div>
   <ProductSkeleton v-if="skeletonLoading.isLoading" />
 </template>
 

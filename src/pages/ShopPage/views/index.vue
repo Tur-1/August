@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch, onMounted } from "vue";
+import { watch, onMounted } from "vue";
 import useShopPageService from "@/pages/ShopPage/services/useShopPageService";
 import ShopPageDesktop from "@/pages/ShopPage/views/desktop/ShopPageDesktop.vue";
 import ShopPageMobile from "@/pages/ShopPage/views/mobile/ShopPageMobile.vue";
@@ -14,7 +14,7 @@ const { getCategory, getProducts } = useShopPageService();
 
 onMounted(() => {
   getRouteQueryString(route.query);
-  Promise.all([getCategory(), getProducts()]);
+  Promise.all([getProducts({ query: route.query }), getCategory()]);
 });
 
 watch(

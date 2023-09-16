@@ -9,9 +9,12 @@ import {
 import MobilePagination from "@/components/MobilePagination/index.vue";
 import useShopPageService from "@/pages/ShopPage/services/useShopPageService";
 import { useProductsStore } from "@/pages/ShopPage/stores";
+import { useRoute } from "vue-router";
 
 const { getProducts } = useShopPageService();
 const ProductsStore = useProductsStore();
+
+const route = useRoute();
 </script>
 
 <template>
@@ -28,8 +31,7 @@ const ProductsStore = useProductsStore();
 
         <MobilePagination
           :pagination="ProductsStore.pagination"
-          @onPageChange="getProducts"
-          v-if="ProductsStore.count !== 0"
+          @onPageChange="(url) => getProducts({ url: url, query: route.query })"
         />
       </div>
     </div>
