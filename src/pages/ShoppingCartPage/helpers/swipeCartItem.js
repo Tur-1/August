@@ -1,8 +1,10 @@
 
 
-let clientX;
+let clientX = 0;
 let start;
 let end;
+
+
 export const touchstart = (event, id) =>
 {
 
@@ -42,12 +44,9 @@ export const touchend = (event, id) =>
 
     if (clientX >= 40)
     {
-        item.style.transform = `translateX(-148px)`;
+        item.style.transform = `translateX(-40%)`;
     }
-    if (end < start)
-    {
-        item.style.transform = `translateX(-148px)`;
-    }
+
 
     if (end > start)
     {

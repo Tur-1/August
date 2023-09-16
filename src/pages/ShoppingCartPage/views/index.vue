@@ -5,6 +5,7 @@
       class="mt-3"
       :class="{ container: isDesktop, 'container-fluid': isMobile }"
     >
+      <CartHeader v-if="isDesktop" />
       <div class="row">
         <CartItem />
 
@@ -24,6 +25,8 @@ import {
   CartDetails,
   CartEmpty,
 } from "@/pages/ShoppingCartPage/components";
+import CartHeader from "@/pages/ShoppingCartPage/components/CartHeader/index.vue";
+
 import useShoppingCartService from "@/pages/ShoppingCartPage/services/useShoppingCartService";
 import {
   CartStore,

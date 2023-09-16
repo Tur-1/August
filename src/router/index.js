@@ -81,7 +81,7 @@ const router = createRouter({
         backgroundColor: '#f9f9f9',
         previousPage: '/my-account',
         requiresAuth: true,
-        title: 'orders',
+        title: 'order',
       },
     },
 
