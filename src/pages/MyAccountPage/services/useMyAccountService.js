@@ -1,13 +1,13 @@
 
 import useMyAccountPageApi from "@/pages/MyAccountPage/api/useMyAccountPageApi";
-import { useOrdersStore } from "@/pages/MyAccountPage/stores";
+import useOrdersStore from "@/pages/MyAccountPage/stores/OrdersStore";
 import useToastNotification from "@/components/Toast/useToastNotification";
-import { FormStore } from "@/components/BaseForm";
-import { useBaseModel } from "@/components/BaseModal";
+import FormStore from "@/components/BaseForm/stores/FormStore";
+import useBaseModel from "@/components/BaseModal/service/useBaseModel";
 import useRouterStore from "@/router/RouterStore";
-import { useAuthUserStore } from "@/pages/AuthPage/stores";
+import useAuthUserStore from "@/pages/AuthPage/stores/AuthUserStore";
 import { isNotFound, skeletonLoading } from "@/helpers";
-import { useLoadingSpinner } from "@/components/LoadingSpinner";
+import useLoadingSpinner from "@/components/LoadingSpinner/stores/useLoadingSpinner";
 
 
 export default function useMyAccountService()

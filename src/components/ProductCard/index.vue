@@ -11,7 +11,13 @@
 
   <CardSkeleton v-if="skeletonLoading.isLoading" :class="props.class" />
 
-  <NoProductsFound v-if="products.length == 0 && !skeletonLoading.isLoading" />
+  <NoProductsFound
+    v-if="
+      products.length == 0 &&
+      !skeletonLoading.isLoading &&
+      props.showNoProductsFound
+    "
+  />
 </template>
 
 <script setup>
@@ -28,6 +34,7 @@ const props = defineProps({
     default: "col-xl-3 col-lg-4 col-md-4 col-6",
   },
   products: Object,
+  showNoProductsFound: Boolean,
 });
 const { addProductToWishlist } = useWishlistService();
 

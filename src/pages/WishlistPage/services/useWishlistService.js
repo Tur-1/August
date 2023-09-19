@@ -1,17 +1,17 @@
 
-import { useAuthModalStore, useAuthUserStore } from '@/pages/AuthPage/stores';
+import useAuthModalStore from '@/pages/AuthPage/stores/AuthModalStore';
+import useAuthUserStore from '@/pages/AuthPage/stores/AuthUserStore';
+
 import { useLoadingSpinner } from '@/components/LoadingSpinner';
-import { isNotNull, skeletonLoading } from '@/helpers';
+import { skeletonLoading } from '@/helpers';
 
 import useWishlistPageApi from '@/pages/WishlistPage/api/useWishlistPageApi';
 import { useWishlistStore } from '@/pages/WishlistPage/stores';
-import useRouterStore from '@/router/RouterStore';
 
 
 export default function useWishlistService()
 {
     const authStore = useAuthUserStore();
-    const routeService = useRouterStore();
     const wishlistStore = useWishlistStore();
 
     const getWishlistProducts = async () =>
@@ -29,7 +29,6 @@ export default function useWishlistService()
 
         } catch (error)
         {
-            routeService.redirectUnauthorizedUser(error);
         }
 
         skeletonLoading.hide();

@@ -5,7 +5,7 @@ import useDesktopLayoutService from "@/layouts/desktop/services/useDesktopLayout
 import SectionsStore from "@/layouts/desktop/stores/SectionsStore";
 import useShoppingCartService from "@/pages/ShoppingCartPage/services/useShoppingCartService";
 import { useCartCounterStore } from "@/pages/ShoppingCartPage/stores";
-import { useAuthUserStore } from "@/pages/AuthPage/stores";
+import useAuthUserStore from "@/pages/AuthPage/stores/AuthUserStore";
 
 const { getAllSections } = useDesktopLayoutService();
 const route = useRoute();

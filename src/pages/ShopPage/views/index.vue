@@ -1,13 +1,19 @@
 <script setup>
 import { watch, onMounted } from "vue";
 import useShopPageService from "@/pages/ShopPage/services/useShopPageService";
-import ShopPageDesktop from "@/pages/ShopPage/views/desktop/ShopPageDesktop.vue";
-import ShopPageMobile from "@/pages/ShopPage/views/mobile/ShopPageMobile.vue";
 import { useRoute, useRouter } from "vue-router";
 import { FilterStore } from "@/pages/ShopPage/stores";
 import { getRouteQueryString } from "@/pages/ShopPage/helpers";
 import { isDesktop, isMobile } from "@/helpers";
 
+import { defineAsyncComponent } from "vue";
+
+const ShopPageDesktop = defineAsyncComponent(() =>
+  import("@/pages/ShopPage/views/desktop/ShopPageDesktop.vue")
+);
+const ShopPageMobile = defineAsyncComponent(() =>
+  import("@/pages/ShopPage/views/mobile/ShopPageMobile.vue")
+);
 const route = useRoute();
 const router = useRouter();
 const { getCategory, getProducts } = useShopPageService();

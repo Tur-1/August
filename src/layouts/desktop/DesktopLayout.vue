@@ -2,7 +2,7 @@
 import { RouterView, useRoute } from "vue-router";
 import Footer from "@/layouts/desktop/components/Footer.vue";
 import Header from "@/layouts/desktop/components/Header.vue";
-import { useAuthModalStore } from "@/pages/AuthPage/stores";
+import useAuthModalStore from "@/pages/AuthPage/stores/AuthModalStore";
 import { defineAsyncComponent } from "vue";
 
 const AuthPage = defineAsyncComponent(() =>

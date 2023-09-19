@@ -21,5 +21,10 @@
   </div>
 </template>
 <script setup>
-const props = defineProps(["class"]);
+const props = defineProps({
+  class: {
+    type: String,
+    default: "col-xl-3 col-lg-4 col-md-4 col-6",
+  },
+});
 </script>

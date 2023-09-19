@@ -1,7 +1,7 @@
 import useAuthApi from "@/pages/AuthPage/api/useAuthApi";
 import useRouterStore from "@/router/RouterStore";
 import useToastNotification from "@/components/Toast/useToastNotification";
-import { FormStore } from "@/components/BaseForm";
+import FormStore from "@/components/BaseForm/stores/FormStore";
 import
 {
     useAuthUserStore,

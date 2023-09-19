@@ -3,7 +3,7 @@ import { useRoute, useRouter } from "vue-router";
 import useShoppingCartService from "@/pages/ShoppingCartPage/services/useShoppingCartService";
 import { useCartCounterStore } from "@/pages/ShoppingCartPage/stores";
 import { onMounted } from "vue";
-import { useAuthUserStore } from "@/pages/AuthPage/stores";
+import useAuthUserStore from "@/pages/AuthPage/stores/AuthUserStore";
 import FooterItem from "@/layouts/mobile/components/Footer/FooterItem.vue";
 
 const route = useRoute();

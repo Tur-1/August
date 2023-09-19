@@ -5,6 +5,7 @@
       <ProductCard
         :products="HomePageStore.products"
         class="col-xl-2 col-lg-2 col-md-4 col-5"
+        :showNoProductsFound="false"
       />
     </div>
   </div>

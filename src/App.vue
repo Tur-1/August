@@ -1,10 +1,14 @@
 <script setup>
-import DesktopLayout from "@/layouts/desktop/DesktopLayout.vue";
-import MobileLayout from "@/layouts/mobile/MobileLayout.vue";
 import { isDesktop, isMobile } from "@/helpers";
-import { defineAsyncComponent } from "vue";
 import LoadingSpinner from "@/components/LoadingSpinner/views/LoadingSpinner.vue";
+import { defineAsyncComponent } from "vue";
 
+const DesktopLayout = defineAsyncComponent(() =>
+  import("@/layouts/desktop/DesktopLayout.vue")
+);
+const MobileLayout = defineAsyncComponent(() =>
+  import("@/layouts/mobile/MobileLayout.vue")
+);
 const Toast = defineAsyncComponent(() =>
   import("@/components/Toast/index.vue")
 );

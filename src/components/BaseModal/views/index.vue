@@ -16,8 +16,7 @@
 </template>
 <script setup>
 import ModalHeader from "@/components/BaseModal/views/ModalHeader.vue";
-import { useBaseModel } from "@/components/BaseModal";
-import { BaseForm } from "@/components/BaseForm";
+import useBaseModel from "@/components/BaseModal/service/useBaseModel";
 
 const props = defineProps({
   onProgress: Boolean,

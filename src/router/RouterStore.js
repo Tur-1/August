@@ -3,9 +3,11 @@ import router from '@/router'
 import config from "@/config/app";
 import { isNotNull } from "@/helpers";
 import { defineStore } from 'pinia'
+import { useRoute } from "vue-router";
 
 const useRouterStore = defineStore('RouterStore', () =>
 {
+    const route = useRoute();
     const intendedPath = ref(null);
     const pageTitle = ref(null);
     const previousPage = ref(null);
@@ -23,6 +25,10 @@ const useRouterStore = defineStore('RouterStore', () =>
             intendedPath.value = null;
             return router.push(path);
         }
+    };
+    const isRouteRequiresAuth = () =>
+    {
+        return route.meta.requiresAuth;
     };
     const redirectToRoute = (routeName) =>
     {
@@ -64,6 +70,7 @@ const useRouterStore = defineStore('RouterStore', () =>
         setPageBackgroundColor,
         redirectToRoute,
         setPreviousPage,
+        isRouteRequiresAuth
     };
 
 }, {

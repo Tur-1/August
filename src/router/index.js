@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomePage from '@/pages/HomePage/views/index.vue'
+// import HomePage from '@/pages/HomePage/views/index.vue'
 import config from "@/config/app";
 import useRouterStore from '@/router/RouterStore'
 import AuthMiddleware from '@/Middleware/AuthMiddleware'
@@ -15,7 +15,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomePage,
+      component: () => import('@/pages/HomePage/views/index.vue'),
       meta: {
         title: config.APP_NAME,
       }

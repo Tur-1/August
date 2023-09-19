@@ -9,13 +9,15 @@ import {
   AddressBook,
   AccountPageItemSkeleton,
   MyOrders,
+  AvatarSkeleton,
 } from "@/pages/MyAccountPage/components";
 
 const { logout } = useAuthService();
 </script>
 <template>
   <section>
-    <UserAvatar />
+    <UserAvatar v-if="!skeletonLoading.isLoading" />
+    <AvatarSkeleton v-if="skeletonLoading.isLoading" />
     <ul class="account-items" v-if="!skeletonLoading.isLoading">
       <AccountPageItem
         title="My Orders"

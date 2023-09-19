@@ -1,7 +1,6 @@
 import useRouterStore from "@/router/RouterStore";
-import { useAuthModalStore, useAuthUserStore } from "@/pages/AuthPage/stores";
-
-
+import useAuthUserStore from "@/pages/AuthPage/stores/AuthUserStore";
+import useAuthModalStore from "@/pages/AuthPage/stores/AuthModalStore";
 const AuthMiddleware = async ({ to, from, next }) =>
 {
 

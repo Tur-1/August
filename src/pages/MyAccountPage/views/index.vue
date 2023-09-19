@@ -5,11 +5,16 @@
 
 <script setup>
 import { isDesktop, isMobile } from "@/helpers";
-import MobileMyAccountPage from "@/pages/MyAccountPage/views/mobile/MobileMyAccountPage.vue";
-import DesktopMyAccountPage from "@/pages/MyAccountPage/views/desktop/DesktopMyAccountPage.vue";
 import useMyAccountService from "@/pages/MyAccountPage/services/useMyAccountService";
-import { onMounted } from "vue";
+import { defineAsyncComponent, onMounted } from "vue";
 import useUserAddressService from "@/pages/MyAccountPage/services/useUserAddressService";
+
+const DesktopMyAccountPage = defineAsyncComponent(() =>
+  import("@/pages/MyAccountPage/views/desktop/DesktopMyAccountPage.vue")
+);
+const MobileMyAccountPage = defineAsyncComponent(() =>
+  import("@/pages/MyAccountPage/views/mobile/MobileMyAccountPage.vue")
+);
 
 const { getUserOrders } = useMyAccountService();
 const { getUserAddresses } = useUserAddressService();

@@ -1,7 +1,7 @@
 
 import { reactive } from "vue";
-import { useBaseModel } from "@/components/BaseModal";
-import { useBottomOffcanvas } from "@/components/Offcanvas";
+import useBaseModel from "@/components/BaseModal/service/useBaseModel";
+import useBottomOffcanvas from "@/components/Offcanvas/services/useBottomOffcanvas";
 import { isDesktop, isMobile } from "@/helpers";
 
 
