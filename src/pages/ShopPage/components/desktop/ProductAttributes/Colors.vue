@@ -24,12 +24,7 @@
   </div>
 </template>
 <script setup>
-import useShopPageService from "@/pages/ShopPage/services/useShopPageService";
 import { useColorsStore, FilterStore } from "@/pages/ShopPage/stores";
-import { onMounted } from "vue";
 
 const ColorsStore = useColorsStore();
-const { getColors } = useShopPageService();
-
-onMounted(getColors);
 </script>

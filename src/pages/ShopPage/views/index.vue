@@ -16,11 +16,15 @@ const ShopPageMobile = defineAsyncComponent(() =>
 );
 const route = useRoute();
 const router = useRouter();
-const { getCategory, getProducts } = useShopPageService();
+const { getCategory, getProducts, getColors } = useShopPageService();
 
 onMounted(() => {
   getRouteQueryString(route.query);
-  Promise.all([getProducts({ query: route.query }), getCategory()]);
+  Promise.all([
+    getProducts({ query: route.query }),
+    getCategory(),
+    getColors(),
+  ]);
 });
 
 watch(

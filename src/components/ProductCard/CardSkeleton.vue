@@ -5,8 +5,8 @@
     class="product-item product-item-skeleton mb-4"
   >
     <div class="card product-card placeholder-wave" aria-hidden="true">
-      <div class="product-card-image" style="min-height: 289px !important">
-        <div class="placeholder bg-secondary"></div>
+      <div class="product-card-image" style="min-height: 310px !important">
+        <div class="placeholder"></div>
       </div>
 
       <div class="card-body placeholder-wave p-1">

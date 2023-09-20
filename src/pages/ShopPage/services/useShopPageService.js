@@ -57,6 +57,7 @@ export default function useShopPageService()
 
         const ProductsStore = useProductsStore();
         const brandsStore = useBrandsStore();
+        const sizeStore = useSizesStore();
 
 
         try
@@ -73,6 +74,7 @@ export default function useShopPageService()
             ProductsStore.total = response.data.products.meta.pagination.total;
             ProductsStore.pagination = response.data.products.meta.pagination;
             brandsStore.brands = response.data.brands;
+            sizeStore.sizes = response.data.sizes;
 
 
         } catch (error)

@@ -9,7 +9,7 @@ import { useRoute } from "vue-router";
 import FilterHeader from "@/pages/ShopPage/components/mobile/FilterProducts/FilterHeader.vue";
 import FilterItem from "@/pages/ShopPage/components/mobile/FilterProducts/FilterItem.vue";
 import useProductsFilterService from "@/pages/ShopPage/services/useProductsFilterService";
-import { FilterStore, useProductsStore } from "@/pages/ShopPage/stores";
+import { useProductsStore } from "@/pages/ShopPage/stores";
 
 const route = useRoute();
 

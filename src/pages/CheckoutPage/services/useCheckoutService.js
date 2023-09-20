@@ -3,10 +3,9 @@ import { useLoadingSpinner } from "@/components/LoadingSpinner";
 import useToastNotification from "@/components/Toast/useToastNotification";
 import useCheckoutApi from "@/pages/CheckoutPage/api/useCheckoutApi";
 import { useCheckoutStore, useCouponStore } from "@/pages/CheckoutPage/stores";
-import useRouterStore from "@/router/RouterStore";
 import { useAddressStore } from "@/pages/MyAccountPage/stores";
 import { useCartCounterStore } from "@/pages/ShoppingCartPage/stores";
-import { skeletonLoading } from "@/helpers";
+import useRouterStore from "@/router/RouterStore";
 
 export default function useCheckoutService()
 {
@@ -32,7 +31,7 @@ export default function useCheckoutService()
             couponStore.coupon = null;
         } catch (error)
         {
-            useRouterStore().redirectUnauthorizedUser(error);
+
         }
     }
 
