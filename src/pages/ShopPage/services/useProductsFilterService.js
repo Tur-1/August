@@ -1,6 +1,7 @@
 import { useBottomOffcanvas } from "@/components/Offcanvas";
 import useShopPageService from "@/pages/ShopPage/services/useShopPageService";
-import { FilterStore } from "@/pages/ShopPage/stores";
+import ProductsFilterStore from "@/pages/ShopPage/stores/ProductsFilterStore";
+
 import { useRoute, useRouter } from "vue-router";
 
 export default function useProductsFilterService()
@@ -20,9 +21,9 @@ export default function useProductsFilterService()
 
     const clearAll = ({ query }) =>
     {
-        for (const iterator in FilterStore)
+        for (const iterator in ProductsFilterStore)
         {
-            FilterStore[iterator] = [];
+            ProductsFilterStore[iterator] = [];
         }
 
         filterProducts({ query: query });
@@ -36,7 +37,7 @@ export default function useProductsFilterService()
 
     const removeQuery = async (index, item, queryString) =>
     {
-        // FilterStore?.[queryString].splice(index, 1);
+        // ProductsFilterStore?.[queryString].splice(index, 1);
     };
 
     const countProductsTotal = async () =>

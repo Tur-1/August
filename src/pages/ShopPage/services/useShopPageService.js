@@ -1,11 +1,10 @@
-import
-{
-    useCategoriesStore,
-    useProductsStore,
-    useBrandsStore,
-    useColorsStore,
-    useSizesStore
-} from "@/pages/ShopPage/stores";
+
+import useSizesStore from "@/pages/ShopPage/stores/SizesStore";
+import useColorsStore from "@/pages/ShopPage/stores/ColorsStore";
+import useBrandsStore from "@/pages/ShopPage/stores/BrandsStore";
+import useProductsStore from "@/pages/ShopPage/stores/ProductsStore";
+import useCategoriesStore from "@/pages/ShopPage/stores/CategoriesStore";
+
 import useShopPageApi from '@/pages/ShopPage/api/useShopPageApi'
 import useRouterStore from '@/router/RouterStore';
 import { skeletonLoading } from "@/helpers";

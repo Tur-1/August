@@ -12,7 +12,7 @@
             type="checkbox"
             :id="'size-' + size.id"
             :value="size.slug"
-            v-model="FilterStore.size"
+            v-model="ProductsFilterStore.size"
           />
         </div>
         <span class="me-2">{{ size.name }} </span>
@@ -23,7 +23,7 @@
   </div>
 </template>
 <script setup>
-import { useSizesStore, FilterStore } from "@/pages/ShopPage/stores";
-
+import useSizesStore from "@/pages/ShopPage/stores/SizesStore";
+import ProductsFilterStore from "@/pages/ShopPage/stores/ProductsFilterStore";
 const SizesStore = useSizesStore();
 </script>

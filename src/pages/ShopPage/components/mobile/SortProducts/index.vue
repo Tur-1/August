@@ -35,7 +35,7 @@
               <div class="circle-wrap">
                 <span
                   :class="{
-                    'active-sort': FilterStore.sort == sort.slug,
+                    'active-sort': ProductsFilterStore.sort == sort.slug,
                   }"
                 ></span>
               </div>
@@ -47,11 +47,10 @@
   </BottomOffcanvas>
 </template>
 <script setup>
-import { useRoute } from "vue-router";
 import { useBottomOffcanvas, BottomOffcanvas } from "@/components/Offcanvas";
-import { FilterStore, SortProductsStore } from "@/pages/ShopPage/stores";
+import SortProductsStore from "@/pages/ShopPage/stores/SortProductsStore";
+import ProductsFilterStore from "@/pages/ShopPage/stores/ProductsFilterStore";
 import useSortProductsService from "@/pages/ShopPage/services/useSortProductsService";
 
 const { sortPorudtcs } = useSortProductsService();
-const route = useRoute();
 </script>

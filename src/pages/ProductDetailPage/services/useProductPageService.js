@@ -101,7 +101,7 @@ export default function useProductPageService()
 
             review.value.comment = '';
 
-            await getProductReviews();
+            await getProductReviews(productStore.product.id);
 
 
             useToastNotification.open().withMessage(response.data.message);

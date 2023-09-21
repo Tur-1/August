@@ -35,9 +35,6 @@
 <script setup>
 import { skeletonLoading } from "@/helpers";
 import { BackToButtonSkeleton } from "@/pages/ShopPage/components/desktop";
-import { useCategoriesStore } from "@/pages/ShopPage/stores";
 
 const props = defineProps(["backTo", "params", "routeName"]);
-
-const CategoriesStore = useCategoriesStore();
 </script>

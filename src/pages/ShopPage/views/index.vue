@@ -2,8 +2,8 @@
 import { watch, onMounted } from "vue";
 import useShopPageService from "@/pages/ShopPage/services/useShopPageService";
 import { useRoute, useRouter } from "vue-router";
-import { FilterStore } from "@/pages/ShopPage/stores";
-import { getRouteQueryString } from "@/pages/ShopPage/helpers";
+import ProductsFilterStore from "@/pages/ShopPage/stores/ProductsFilterStore";
+import getRouteQueryString from "@/pages/ShopPage/helpers/getRouteQueryString";
 import { isDesktop, isMobile } from "@/helpers";
 
 import { defineAsyncComponent } from "vue";
@@ -28,7 +28,7 @@ onMounted(() => {
 });
 
 watch(
-  () => FilterStore,
+  () => ProductsFilterStore,
   (value) => {
     router.push({
       query: {

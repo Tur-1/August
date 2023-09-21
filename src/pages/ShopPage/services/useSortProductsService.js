@@ -1,8 +1,8 @@
 
 import useShopPageService from '@/pages/ShopPage/services/useShopPageService';
-import { FilterStore, SortProductsStore } from "@/pages/ShopPage/stores";
 import { ref } from "vue";
-
+import ProductsFilterStore from '@/pages/ShopPage/stores/ProductsFilterStore';
+import SortProductsStore from '@/pages/ShopPage/stores/SortProductsStore';
 
 
 
@@ -16,11 +16,11 @@ export default function useSortProductsService()
 
     const sortPorudtcs = async ({ slug: slug }) =>
     {
-        FilterStore.sort = slug;
+        ProductsFilterStore.sort = slug;
 
-        getActiveSort(FilterStore.sort);
+        getActiveSort(ProductsFilterStore.sort);
         await getProducts({
-            query: FilterStore,
+            query: ProductsFilterStore,
         });;
 
     };

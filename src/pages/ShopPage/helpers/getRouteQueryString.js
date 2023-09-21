@@ -1,4 +1,4 @@
-import { FilterStore } from "@/pages/ShopPage/stores";
+import ProductsFilterStore from "@/pages/ShopPage/stores/ProductsFilterStore";
 
 
 
@@ -12,10 +12,10 @@ export default function getRouteQueryString(routeQuery)
 
         if (Array.isArray(routeQuery[queryString]) || 'sort' == queryString)
         {
-            FilterStore[queryString] = routeQuery[queryString];
+            ProductsFilterStore[queryString] = routeQuery[queryString];
         } else
         {
-            FilterStore[queryString] = [routeQuery[queryString]];
+            ProductsFilterStore[queryString] = [routeQuery[queryString]];
 
         }
     }

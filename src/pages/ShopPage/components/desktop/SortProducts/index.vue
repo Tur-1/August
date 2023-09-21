@@ -19,7 +19,7 @@
               showSortDropdown()
           "
           :class="{
-            active: FilterStore.sort == sort.slug,
+            active: ProductsFilterStore.sort == sort.slug,
           }"
         >
           <i :class="sort.icon"></i> {{ sort.name }}</a
@@ -31,7 +31,8 @@
   <SortProductsSkeleton v-if="skeletonLoading.isLoading" />
 </template>
 <script setup>
-import { FilterStore, SortProductsStore } from "@/pages/ShopPage/stores";
+import SortProductsStore from "@/pages/ShopPage/stores/SortProductsStore";
+import ProductsFilterStore from "@/pages/ShopPage/stores/ProductsFilterStore";
 import useSortProductsService from "@/pages/ShopPage/services/useSortProductsService";
 import { onMounted } from "vue";
 import { useRoute } from "vue-router";

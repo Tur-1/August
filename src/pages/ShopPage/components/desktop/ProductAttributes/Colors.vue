@@ -17,14 +17,14 @@
           name="color[]"
           :id="'color-' + color.id"
           :value="color.slug"
-          v-model="FilterStore.color"
+          v-model="ProductsFilterStore.color"
         />
       </div>
     </label>
   </div>
 </template>
 <script setup>
-import { useColorsStore, FilterStore } from "@/pages/ShopPage/stores";
-
+import useColorsStore from "@/pages/ShopPage/stores/ColorsStore";
+import ProductsFilterStore from "@/pages/ShopPage/stores/ProductsFilterStore";
 const ColorsStore = useColorsStore();
 </script>

@@ -1,6 +1,6 @@
 import { reactive } from "vue";
 
-const FilterStore = reactive({
+const ProductsFilterStore = reactive({
     brand: [],
     color: [],
     size: [],
@@ -8,4 +8,4 @@ const FilterStore = reactive({
 });
 
 
-export default FilterStore;
+export default ProductsFilterStore;

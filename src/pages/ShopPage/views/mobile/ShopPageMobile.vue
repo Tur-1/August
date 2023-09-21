@@ -1,15 +1,14 @@
 <script setup>
-import ProductCard from "@/components/ProductCard/index.vue";
-
+import { useRoute } from "vue-router";
 import {
   Categories,
   FilterProducts,
   SortProducts,
 } from "@/pages/ShopPage/components/mobile";
+import ProductCard from "@/components/ProductCard/index.vue";
 import MobilePagination from "@/components/MobilePagination/index.vue";
 import useShopPageService from "@/pages/ShopPage/services/useShopPageService";
-import { useProductsStore } from "@/pages/ShopPage/stores";
-import { useRoute } from "vue-router";
+import useProductsStore from "@/pages/ShopPage/stores/ProductsStore";
 
 const { getProducts } = useShopPageService();
 const ProductsStore = useProductsStore();

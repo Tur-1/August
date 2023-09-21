@@ -1,7 +1,7 @@
 <script setup>
 import { Header, Sidebar } from "@/pages/ShopPage/components/desktop";
 import Pagination from "@/components/Pagination/index.vue";
-import { useProductsStore } from "@/pages/ShopPage/stores";
+import useProductsStore from "@/pages/ShopPage/stores/ProductsStore";
 import ProductCard from "@/components/ProductCard/index.vue";
 import useShopPageService from "@/pages/ShopPage/services/useShopPageService";
 import { useRoute } from "vue-router";

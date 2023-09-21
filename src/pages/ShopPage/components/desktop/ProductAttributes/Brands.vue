@@ -14,7 +14,7 @@
             name="brand[]"
             :id="'brand-' + brand.id"
             :value="brand.slug"
-            v-model="FilterStore.brand"
+            v-model="ProductsFilterStore.brand"
           />
         </div>
         <span class="me-2">{{ brand.name }}</span>
@@ -25,7 +25,8 @@
   </div>
 </template>
 <script setup>
-import { useBrandsStore, FilterStore } from "@/pages/ShopPage/stores";
+import useBrandsStore from "@/pages/ShopPage/stores/BrandsStore";
+import ProductsFilterStore from "@/pages/ShopPage/stores/ProductsFilterStore";
 
 const BrandsStore = useBrandsStore();
 </script>
