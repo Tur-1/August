@@ -4,7 +4,7 @@ import useToastNotification from "@/components/Toast/useToastNotification";
 import useCheckoutApi from "@/pages/CheckoutPage/api/useCheckoutApi";
 import { useCheckoutStore, useCouponStore } from "@/pages/CheckoutPage/stores";
 import { useAddressStore } from "@/pages/MyAccountPage/stores";
-import { useCartCounterStore } from "@/pages/ShoppingCartPage/stores";
+import { useCartCounterStore, CartStore } from "@/pages/ShoppingCartPage/stores";
 import useRouterStore from "@/router/RouterStore";
 
 export default function useCheckoutService()
@@ -84,6 +84,7 @@ export default function useCheckoutService()
 
             useToastNotification.open().withMessage(response.data.message);
             CartCounter.counter = 0;
+            CartStore.items = [];
             routeService.redirectToRoute('home');
         } catch (error)
         {

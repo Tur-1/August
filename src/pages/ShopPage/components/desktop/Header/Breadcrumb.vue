@@ -2,7 +2,7 @@
   <ol
     class="breadcrumb"
     id="shop-desktop-breadcrumb"
-    v-if="!skeletonLoading.isLoading"
+    v-if="skeletonLoading.item !== 'sidebar'"
   >
     <li class="breadcrumb-item">
       <Link to="/"> Home </Link>
@@ -25,7 +25,7 @@
     </li>
   </ol>
 
-  <BreadcrumbSkeleton v-if="skeletonLoading.isLoading" />
+  <BreadcrumbSkeleton v-if="skeletonLoading.item == 'sidebar'" />
 </template>
 <script setup>
 import useCategoriesStore from "@/pages/ShopPage/stores/CategoriesStore";

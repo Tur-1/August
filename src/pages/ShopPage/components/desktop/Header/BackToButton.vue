@@ -1,5 +1,5 @@
 <template>
-  <div class="row" v-if="!skeletonLoading.isLoading">
+  <div class="row" v-if="skeletonLoading.item !== 'sidebar'">
     <div class="col-lg-2 col-md-2">
       <div class="text-start text-dark" style="font-size: 12px">
         <i class="bi bi-caret-left-fill"></i>
@@ -29,7 +29,7 @@
     </div>
   </div>
 
-  <BackToButtonSkeleton v-if="skeletonLoading.isLoading" />
+  <BackToButtonSkeleton v-if="skeletonLoading.item == 'sidebar'" />
 </template>
 
 <script setup>

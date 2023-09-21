@@ -25,7 +25,7 @@ watch(
 );
 </script>
 <template>
-  <div class="shop-page-sidebar" v-if="!skeletonLoading.isLoading">
+  <div class="shop-page-sidebar" v-show="skeletonLoading.item !== 'sidebar'">
     <Categories />
     <label class="fw-700 mb-3 sidebar-border-top" for="brands-list">
       Brand
@@ -40,5 +40,5 @@ watch(
     <SizeOptions />
   </div>
 
-  <SidebarSkeleton v-if="skeletonLoading.isLoading" />
+  <SidebarSkeleton v-if="skeletonLoading.item == 'sidebar'" />
 </template>

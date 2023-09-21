@@ -48,7 +48,6 @@ export default function useShopPageService()
 
         skeletonLoading.hide('sidebar');
 
-
     }
     const getProducts = async ({ query, url }) =>
     {

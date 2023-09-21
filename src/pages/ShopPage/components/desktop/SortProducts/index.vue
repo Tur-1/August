@@ -1,5 +1,5 @@
 <template>
-  <div class="sort-by-area" v-if="!skeletonLoading.isLoading">
+  <div class="sort-by-area" v-if="skeletonLoading.item !== 'sidebar'">
     <div class="sort-by-wrap" @click="showSortDropdown">
       <div class="sort-by">
         <span><i class="bi bi-funnel"></i> Sort by: {{ activeSort }} </span>
@@ -28,7 +28,7 @@
     </ul>
   </div>
 
-  <SortProductsSkeleton v-if="skeletonLoading.isLoading" />
+  <SortProductsSkeleton v-if="skeletonLoading.item == 'sidebar'" />
 </template>
 <script setup>
 import SortProductsStore from "@/pages/ShopPage/stores/SortProductsStore";

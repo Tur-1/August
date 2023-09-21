@@ -13,7 +13,7 @@
         <div class="toast-body">
           <span style="margin-right: 10px; font-size: 18px">
             <i
-              class="fa-sharp fa-solid fa-circle-check"
+              class="bi bi-check-circle-fill text-white"
               v-show="!useToastNotification.error"
             />
             <i
