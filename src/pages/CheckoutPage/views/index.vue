@@ -87,7 +87,7 @@ import { isDesktop, skeletonLoading } from "@/helpers";
                 href="/product-detail/airflex-light-wash-slim-fit-jeans"
                 class="checkout-product-image"
                 ><img
-                  src="http://localhost:8000/storage/images/products/product_22/1695182727-1-mobile-web-catalogspkrgd;l.png"
+                  src="/products/product_22/1695182727-1-mobile-web-catalogspkrgd;l.png"
                   class="img-fluid"
               /></a>
               <div class="checkout-product-details">

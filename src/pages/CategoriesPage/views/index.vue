@@ -104,7 +104,7 @@ import useCategoriesPageService from "@/pages/CategoriesPage/services/useCategor
 import { onMounted } from "vue";
 import { skeletonLoading } from "@/helpers";
 
-const { getAllCategories } = useCategoriesPageService();
+// const { getAllCategories } = useCategoriesPageService();
 
-onMounted(getAllCategories);
+// onMounted(getAllCategories);
 </script>
