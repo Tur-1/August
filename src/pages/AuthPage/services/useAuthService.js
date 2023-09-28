@@ -8,6 +8,7 @@ import
     useAuthModalStore
 } from "@/pages/AuthPage/stores";
 import { useLoadingSpinner } from "@/components/LoadingSpinner";
+import { useCartCounterStore } from "@/pages/ShoppingCartPage/stores";
 
 export default function useAuthService()
 {
@@ -64,6 +65,7 @@ export default function useAuthService()
     };
     const logout = async () =>
     {
+
         useLoadingSpinner.show();
 
         try
@@ -71,6 +73,8 @@ export default function useAuthService()
             await useAuthApi.logout();
 
             authUser.reset();
+
+            useCartCounterStore().reset();
 
             routeStore.redirectToRoute('home');
 

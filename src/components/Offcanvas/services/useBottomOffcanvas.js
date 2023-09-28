@@ -26,6 +26,7 @@ const useBottomOffcanvas = reactive({
     id: String,
     open(id, scaleAnimation = false)
     {
+        this.isOpen = true;
         this.id = id;
         document.body.style.backgroundColor = "black";
         if (id == this.id)
@@ -40,8 +41,6 @@ const useBottomOffcanvas = reactive({
 
         }
 
-
-        this.isOpen = true;
         if (scaleAnimation)
         {
             this.scaleAnimation = scaleAnimation;
