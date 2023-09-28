@@ -45,7 +45,7 @@ const useBottomOffcanvas = reactive({
         if (scaleAnimation)
         {
             this.scaleAnimation = scaleAnimation;
-            getAppDiv().style.scale = "0.93 0.90";
+            getAppDiv().style.scale = "0.93 0.93";
 
         }
 

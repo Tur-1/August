@@ -37,6 +37,12 @@
     flex-direction: column;
     width: 90%;
 }
+
+@media screen and (max-width: 380px) {
+    .cart-item-details .cart-item-details-col:last-child {
+        width: 50% !important;
+    }
+}
 .cart-item-details .cart-item-details-col:last-child {
     display: flex;
     flex-direction: column;
