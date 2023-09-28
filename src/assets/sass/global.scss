@@ -33,12 +33,9 @@ body {
 #app {
     transition: scale 0.1s ease-in-out;
     border-radius: 5px !important;
-}
-.app-bg-secondary {
-    background-color: $bg-secondary !important;
-}
-.app-bg-primary {
-    background-color: $bg-primary !important;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden !important;
 }
 
 @media screen and (display-mode: standalone) {
@@ -117,6 +114,12 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+.app-bg-secondary {
+    background-color: $bg-secondary !important;
+}
+.app-bg-primary {
+    background-color: $bg-primary !important;
 }
 .bi-trash3,
 .bi-pencil-square,

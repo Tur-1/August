@@ -14,12 +14,16 @@ const route = useRoute();
 </script>
 
 <template>
-  <Header />
+  <Teleport to="#mobileHeader">
+    <Header />
+  </Teleport>
 
-  <main>
-    <RouterView :key="route.path" />
-  </main>
-  <Footer />
+  <RouterView :key="route.path" />
+
+  <Teleport to="#mobileFooter">
+    <Footer />
+  </Teleport>
+
   <Teleport to="#BottomOffcanvas">
     <BottomOffcanvas id="auth-modal" height="90%">
       <template #body>
@@ -28,13 +32,3 @@ const route = useRoute();
     </BottomOffcanvas>
   </Teleport>
 </template>
-<style>
-.auth-title {
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: 500;
-  display: flex;
-  justify-content: center;
-  padding-top: 5px;
-}
-</style>
