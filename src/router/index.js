@@ -148,10 +148,10 @@ router.beforeEach((to, from, next) =>
 {
 
 
-  if (to.meta.requiresAuth)
-  {
-    return AuthMiddleware({ to, from, next });
-  }
+  // if (to.meta.requiresAuth)
+  // {
+  //   return AuthMiddleware({ to, from, next });
+  // }
 
   next();
 
