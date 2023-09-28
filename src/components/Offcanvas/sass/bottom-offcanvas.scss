@@ -1,3 +1,9 @@
+@media screen and (max-width: 760px) {
+    .bottom-offcanvas-body {
+        padding-bottom: 80px !important;
+    }
+}
+
 .bottom-offcanvas-bg {
     position: fixed;
     top: 0;

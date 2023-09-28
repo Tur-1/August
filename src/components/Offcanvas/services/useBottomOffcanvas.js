@@ -6,7 +6,10 @@ const getOffcanvasContainer = () =>
 {
     return document.querySelector(".bottom-offcanvas-container");
 }
-
+const getAppDiv = () =>
+{
+    return document.getElementById('app');
+}
 const addShowClass = () =>
 {
     getOffcanvasContainer().classList.add("show");
@@ -42,14 +45,8 @@ const useBottomOffcanvas = reactive({
         if (scaleAnimation)
         {
             this.scaleAnimation = scaleAnimation;
-            setTimeout(() =>
-            {
+            getAppDiv().style.scale = "0.93 0.95";
 
-
-                document.getElementById('app').style.scale = "0.95 0.98";
-
-
-            }, 100);
         }
 
     },
@@ -62,7 +59,7 @@ const useBottomOffcanvas = reactive({
 
         if (this.scaleAnimation)
         {
-            document.getElementById('app').style.removeProperty('scale');
+            getAppDiv().style.removeProperty('scale');
             document.body.style.backgroundColor = 'white';
             this.scaleAnimation = false;
         }

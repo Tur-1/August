@@ -23,7 +23,7 @@ body {
     background-color: $bg-primary;
 }
 
-@media only screen and (max-width: 760px) {
+@media screen and (max-width: 760px) {
     ::-webkit-scrollbar {
         display: none !important;
         width: 0 !important;
