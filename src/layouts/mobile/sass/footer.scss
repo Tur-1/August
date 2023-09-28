@@ -1,9 +1,9 @@
 /******** footer *************/
 
-@media (display-mode: standalone) {
-    #mobile-footer {
-        padding-bottom: 10px !important;
-    }
+@media screen and (display-mode: standalone) {
+    // #mobile-footer {
+    //     height: 73px !important;
+    // }
 }
 
 #mobile-footer {
@@ -16,6 +16,7 @@
     right: 0;
     bottom: 0;
     padding: 0px 10px;
+    padding-bottom: calc(env(safe-area-inset-bottom) + 10px);
     z-index: 1;
 }
 
