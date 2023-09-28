@@ -24,29 +24,18 @@ const useBottomOffcanvas = reactive({
     isOpen: false,
     scaleAnimation: false,
     id: String,
-    open(id, scaleAnimation = false)
+    open(id)
     {
         this.isOpen = true;
         this.id = id;
-        document.body.style.backgroundColor = "black";
-        if (id == this.id)
+
+        setTimeout(() =>
         {
-            setTimeout(() =>
-            {
-                addShowClass();
-            }, 100);
-
-            document.documentElement.style.overflow = "hidden";
+            addShowClass();
+        }, 100);
 
 
-        }
-
-        if (scaleAnimation)
-        {
-            this.scaleAnimation = scaleAnimation;
-            getAppDiv().style.scale = "0.93 0.93";
-
-        }
+        document.documentElement.style.overflow = "hidden";
 
     },
     close(id, event)
@@ -56,20 +45,12 @@ const useBottomOffcanvas = reactive({
         if (event && event.target.closest(".bottom-offcanvas-container")) return;
         document.documentElement.style.overflow = "auto";
 
-        if (this.scaleAnimation)
-        {
-            getAppDiv().style.removeProperty('scale');
-            document.body.style.backgroundColor = 'white';
-            this.scaleAnimation = false;
-        }
         removeShowClass();
 
         setTimeout(() =>
         {
             this.isOpen = false;
         }, 300);
-
-
 
     },
 
