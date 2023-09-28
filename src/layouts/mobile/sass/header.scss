@@ -1,4 +1,9 @@
 /******* mobile header ********/
+@media screen and (display-mode: standalone) {
+    .mobile-header {
+    }
+}
+
 .mobile-header {
     position: fixed !important;
     top: 0;
