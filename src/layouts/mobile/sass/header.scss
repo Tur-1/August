@@ -1,8 +1,8 @@
 /******* mobile header ********/
 @media screen and (display-mode: standalone) {
-    .mobile-header {
-        height: 88px !important;
-    }
+    // .mobile-header {
+    //     height: 88px !important;
+    // }
 }
 
 .mobile-header {
@@ -13,7 +13,7 @@
     bottom: 0;
     width: 100%;
     height: 45px;
-    // height: calc(env(safe-area-inset-bottom) + 43px);
+    height: calc(env(safe-area-inset-top) + 43px);
     z-index: 999;
     display: flex;
     align-items: center;
