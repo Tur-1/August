@@ -4,19 +4,40 @@ import { ref } from "vue";
 import { defineStore } from 'pinia'
 
 
-export const useCouponStore = defineStore('CouponStore', () =>
+const useCouponStore = defineStore('CouponStore', () =>
 {
 
-    let code = ref('');
-    let message = ref(null);
-    let error = ref(false);
+    const code = ref('');
+    const message = ref(null);
+    const error = ref(false);
     const coupon = ref(null);
 
+    function clearCode()
+    {
+        code.value = '';
+    }
+    function clearMessage()
+    {
+        message.value = null;
+    }
+    function setMessage(value)
+    {
+        message.value = value;
+    }
+    function setCoupon(coupon)
+    {
+        error.value = false;
+        coupon.value = coupon;
+    }
     return {
         coupon,
         code,
         message,
-        error
+        error,
+        clearMessage,
+        setMessage,
+        clearCode,
+        setCoupon
     };
 });
 

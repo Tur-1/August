@@ -2,7 +2,7 @@
   <div
     class="nav-search-bar"
     :class="{ 'ms-1 me-1 w-100': route.name == 'categories' }"
-    v-if="route.name == 'shop' || route.name == 'categories'"
+    v-if="route.name == 'category_page' || route.name == 'categories'"
   >
     <i class="bi bi-search"></i>
     <input

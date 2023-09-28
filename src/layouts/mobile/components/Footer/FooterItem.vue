@@ -16,6 +16,7 @@ const props = defineProps({
   pageName: String,
   routeName: String,
   icon: String,
+  activeRouteNames: Array,
   fill: {
     default: true,
     type: Boolean,
@@ -27,13 +28,19 @@ const props = defineProps({
     <Link
       :to="{ name: routeName }"
       :id="`footer-item-${routeName}`"
-      :class="{ 'active-footer-item': route.name == routeName }"
+      :class="{
+        'active-footer-item':
+          route.name == routeName || activeRouteNames?.includes(route.name),
+      }"
     >
       <i
         class="position-relative"
         :class="[
           { icon: route.name == routeName && !fill },
-          route.name == routeName && fill ? `${icon}-fill` : icon,
+          (route.name == routeName && fill) ||
+          (activeRouteNames?.includes(route.name) && fill)
+            ? `${icon}-fill`
+            : icon,
         ]"
       >
         <slot name="badge" />

@@ -4,7 +4,7 @@
     <div class="base-slider">
       <ProductCard
         :products="productStore.relatedProducts"
-        class="col-xl-2 col-lg-2 col-md-4 col-5 mb-4"
+        class="col-xl-3 col-lg-3 col-md-4 col-5 mb-4"
       />
     </div>
   </div>

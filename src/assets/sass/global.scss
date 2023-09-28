@@ -65,6 +65,16 @@ section {
     min-height: calc(100vh - 70px);
     padding-bottom: calc(env(safe-area-inset-bottom) + 65px);
 }
+@media ((min-width: 768px)) and (max-width: 995px) {
+    section.container {
+        max-width: 920px !important;
+    }
+}
+@media (min-width: 1000px) and (max-width: 1200px) {
+    section.container {
+        max-width: 1050px !important;
+    }
+}
 @media only screen and (max-width: 767px) {
     section {
         padding-top: 45px;
@@ -177,7 +187,7 @@ ul {
 }
 .placeholder {
     background-color: #d0d0d0 !important;
-    border-radius: 0.25rem !important;
+    border-radius: 10px !important;
 }
 button[type="submit"] span,
 .spinner-border {

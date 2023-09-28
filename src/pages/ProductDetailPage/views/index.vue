@@ -12,6 +12,8 @@ import {
   BreadcrumbItem,
   RelatedProducts,
 } from "@/pages/ProductDetailPage/components";
+import useRouterStore from "@/router/RouterStore";
+const routerStore = useRouterStore();
 
 const productStore = useProductStore();
 const { getProductDetail, getRelatedProducts, getProductReviews } =

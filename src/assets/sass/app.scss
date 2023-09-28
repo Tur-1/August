@@ -1,10 +1,12 @@
 @import "./global.scss";
 
-/******************  layouts   ********************/
+/******************  mobile layouts   ********************/
 
 @import "@/layouts/mobile/sass/footer.scss";
 @import "@/layouts/mobile/sass/header.scss";
 @import "@/layouts/mobile/sass/search-box.scss";
+
+/******************  desktop layouts   ********************/
 
 @import "@/layouts/desktop/sass/footer.scss";
 @import "@/layouts/desktop/sass/navbar.scss";
@@ -39,24 +41,30 @@
 @import "@/components/Checkbox/checkbox.scss";
 
 /******************  pages   ********************/
+
+// home page
 @import "@/pages/HomePage/sass/home-page.scss";
 
-@import "@/pages/ShoppingCartPage/sass/shopping-cart-page.scss";
-
-@import "@/pages/ShopPage/sass/shop-page.scss";
-
-@import "@/pages/AuthPage/sass/auth-page.scss";
-
-@import "@/pages/HomePage/sass/home-page.scss";
-
-@import "@/pages/ShoppingCartPage/sass/shopping-cart-page.scss";
-
-@import "@/pages/WishlistPage/sass/wishlist-page.scss";
-
-@import "@/pages/CheckoutPage/sass/checkout-page.scss";
-
+// categories page
 @import "@/pages/CategoriesPage/sass/categories-page.scss";
 
+// category page
+@import "@/pages/CategoryPage/sass/category-page.scss";
+
+// shopping cart page
+@import "@/pages/ShoppingCartPage/sass/shopping-cart-page.scss";
+
+// auth page
+@import "@/pages/AuthPage/sass/auth-page.scss";
+
+// wishlist page
+@import "@/pages/WishlistPage/sass/wishlist-page.scss";
+
+// checkout page
+@import "@/pages/CheckoutPage/sass/checkout-page.scss";
+
+// my account page
 @import "@/pages/MyAccountPage/sass/my-account-page.scss";
 
+// product detail page
 @import "@/pages/ProductDetailPage/sass/product-detail-page.scss";

@@ -6,12 +6,15 @@ import SectionsStore from "@/layouts/desktop/stores/SectionsStore";
 import useShoppingCartService from "@/pages/ShoppingCartPage/services/useShoppingCartService";
 import { useCartCounterStore } from "@/pages/ShoppingCartPage/stores";
 import useAuthUserStore from "@/pages/AuthPage/stores/AuthUserStore";
+import useCategoriesStore from "@/pages/CategoryPage/stores/CategoriesStore";
+import NavbarItem from "@/layouts/desktop/components/NavbarItem.vue";
 
 const { getAllSections } = useDesktopLayoutService();
 const route = useRoute();
 const authStore = useAuthUserStore();
 const CartCounter = useCartCounterStore();
 const { getCartCount } = useShoppingCartService();
+const CategoriesStore = useCategoriesStore();
 
 onMounted(async () => {
   await useRouter().isReady();
@@ -42,27 +45,14 @@ onMounted(async () => {
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <Link
-                :class="{ active: route.name == 'home' }"
-                :to="{ name: 'home' }"
-              >
-                Home
-              </Link>
-            </li>
-            <li class="nav-item" v-for="section in SectionsStore.list">
-              <Link
-                :to="{
-                  name: 'shop',
-                  params: {
-                    categoryUrl: section.url,
-                  },
-                }"
-                :class="{ active: section.url == route.params.categoryUrl }"
-              >
-                {{ section.name }}
-              </Link>
-            </li>
+            <NavbarItem route-name="home" title="Home" />
+            <NavbarItem
+              v-for="section in SectionsStore.list"
+              route-name="category_page"
+              :title="section.name"
+              :route-params="{ category_url: section.url }"
+              :active="section.url == route.params.category_url"
+            />
           </ul>
 
           <div class="nav-icons-container">

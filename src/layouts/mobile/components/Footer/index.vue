@@ -27,9 +27,15 @@ onMounted(async () => {
       <FooterItem
         page-name="Categories"
         route-name="categories"
+        :activeRouteNames="['categories', 'category_page']"
         icon="bi bi-grid"
       />
-      <FooterItem page-name="Cart" route-name="shoppingCart" icon="bi bi-bag">
+      <FooterItem
+        page-name="Cart"
+        route-name="shoppingCart"
+        icon="bi bi-bag"
+        :activeRouteNames="['shoppingCart', 'checkout']"
+      >
         <template #badge>
           <span class="cart-counter">{{ CartCounter.counter }}</span>
         </template>
@@ -42,6 +48,7 @@ onMounted(async () => {
       <FooterItem
         page-name="My Account"
         route-name="myAccount"
+        :activeRouteNames="['myAccount', 'orderPage']"
         icon="bi bi-person-circle"
         :fill="false"
       />

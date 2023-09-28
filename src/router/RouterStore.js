@@ -10,7 +10,7 @@ const useRouterStore = defineStore('RouterStore', () =>
     const route = useRoute();
     const intendedPath = ref(null);
     const pageTitle = ref(null);
-    const previousPage = ref(null);
+    let previousPage = ref(null);
 
     const setIntendedPath = (path) =>
     {
@@ -75,7 +75,7 @@ const useRouterStore = defineStore('RouterStore', () =>
 
 }, {
     persist: {
-        paths: ['intendedPath', 'pageTitle', 'previousPage'],
+        paths: true,
     },
 })
 

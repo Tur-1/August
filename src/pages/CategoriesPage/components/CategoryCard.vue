@@ -2,9 +2,9 @@
   <Link
     class="card-category"
     :to="{
-      name: 'shop',
+      name: 'category_page',
       params: {
-        categoryUrl: `${categoryUrl}`,
+        category_url: `${category_url}`,
       },
       meta: {
         title: name,
@@ -22,7 +22,7 @@ import defultCardImage from "@/assets/images/defult-card-image.png";
 
 const props = defineProps({
   name: String,
-  categoryUrl: String,
+  category_url: String,
   imageUrl: String,
 });
 </script>

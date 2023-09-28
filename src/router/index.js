@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import HomePage from '@/pages/HomePage/views/index.vue'
 import config from "@/config/app";
 import useRouterStore from '@/router/RouterStore'
 import AuthMiddleware from '@/Middleware/AuthMiddleware'
@@ -29,18 +28,6 @@ const router = createRouter({
       },
     },
     {
-      path: '/shop/:categoryUrl',
-      name: 'shop',
-      component: () => import('@/pages/ShopPage/views/index.vue'),
-
-      meta: {
-        previousPage: '/categories',
-        hidePageTitle: true,
-        title: '',
-
-      }
-    },
-    {
       path: '/categories',
       name: 'categories',
       component: () => import('@/pages/CategoriesPage/views/index.vue'),
@@ -52,7 +39,18 @@ const router = createRouter({
       },
 
     },
+    {
+      path: '/categories/:category_url',
+      name: 'category_page',
+      component: () => import('@/pages/CategoryPage/views/index.vue'),
 
+      meta: {
+        previousPage: '/categories',
+        hidePageTitle: true,
+        title: '',
+
+      }
+    },
     {
       path: '/product-detail/:productSlug',
       name: 'productDetail',
@@ -123,13 +121,14 @@ const router = createRouter({
       meta: {
         title: config.APP_NAME,
       },
-      component: () => import('@/pages/Errors/404.vue'),
+      component: () => import('@/pages/Errors/PageNotFound.vue'),
 
     },
 
   ],
   scrollBehavior(to, from, savedPosition)
   {
+
 
     if (savedPosition)
     {
@@ -159,13 +158,16 @@ router.beforeEach((to, from, next) =>
 })
 
 
-router.afterEach((to) =>
+router.afterEach((to, from) =>
 {
 
-  const routeService = useRouterStore();
-  routeService.setPageBackgroundColor(to.meta.backgroundColor);
-  routeService.setPageTitle(to.meta.title);
-  routeService.setPreviousPage(to.meta.previousPage);
+  const routerStore = useRouterStore();
+
+
+  routerStore.setPageBackgroundColor(to.meta.backgroundColor);
+  routerStore.setPageTitle(to.meta.title);
+  routerStore.setPreviousPage(to.name == 'productDetail' ? from.fullPath : to.meta.previousPage);
+
 
 })
 

@@ -1,6 +1,7 @@
 
 import { useLoadingSpinner } from "@/components/LoadingSpinner";
 import useToastNotification from "@/components/Toast/useToastNotification";
+import { isNotFound, isNull } from "@/helpers";
 import useCheckoutApi from "@/pages/CheckoutPage/api/useCheckoutApi";
 import { useCheckoutStore, useCouponStore } from "@/pages/CheckoutPage/stores";
 import { useAddressStore } from "@/pages/MyAccountPage/stores";
@@ -40,30 +41,29 @@ export default function useCheckoutService()
 
         useLoadingSpinner.show();
 
+        couponStore.clearMessage();
 
         try
         {
             let response = await useCheckoutApi.applyCoupon(couponStore.code);
 
             CheckoutStore.cartDetails = response.data.cartDetails;
-            couponStore.coupon = response.data.cartDetails.coupon;
-            couponStore.error = false;
-            couponStore.message = response.data.message;
+            couponStore.setCoupon(response.data.cartDetails.coupon);
+            couponStore.setMessage(response.data.message);
 
-            if (couponStore.coupon == null)
+            if (isNull(couponStore.coupon))
             {
-                couponStore.code = '';
-                couponStore.message = null;
+                couponStore.clearCode();
+                couponStore.clearMessage();
             }
 
         } catch (error)
         {
 
-            if (error && error.response?.status == 404)
+            if (isNotFound(error))
             {
                 couponStore.error = true;
-                couponStore.message = error.response.data.message;
-
+                couponStore.setMessage(error.response.data.message);
             }
 
         }

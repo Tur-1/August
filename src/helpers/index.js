@@ -3,7 +3,7 @@ import { reactive, ref } from "vue";
 let isDesktop = ref(true);
 let isMobile = ref(false);
 
-const mediaQueryWidth = window.matchMedia("(max-width: 756px)");
+const mediaQueryWidth = window.matchMedia("(max-width: 765px)");
 
 if (mediaQueryWidth.matches)
 {

@@ -13,7 +13,7 @@
 
   <NoProductsFound
     v-if="
-      products.length == 0 &&
+      products.length <= 0 &&
       !skeletonLoading.isLoading &&
       props.showNoProductsFound
     "
@@ -34,7 +34,10 @@ const props = defineProps({
     default: "col-xl-3 col-lg-4 col-md-4 col-6",
   },
   products: Object,
-  showNoProductsFound: Boolean,
+  showNoProductsFound: {
+    default: false,
+    type: Boolean,
+  },
 });
 const { addProductToWishlist } = useWishlistService();
 

@@ -90,8 +90,9 @@ export default function useAuthService()
         {
             let response = await useAuthApi.sendPasswordResetLink(FormStore.fields);
 
+            useAuthModalStore.close();
 
-            useToastNotification.open().withMessage(response.data.status);
+            useToastNotification.open().withMessage(response.data.message);
 
         } catch (error)
         {
@@ -110,7 +111,8 @@ export default function useAuthService()
             let response = await useAuthApi.resetPassword(FormStore.fields);
 
 
-            useToastNotification.open().withMessage(response.data.status);
+            routeStore.redirectToRoute('home');
+            useToastNotification.open().withMessage(response.data.message);
 
 
 

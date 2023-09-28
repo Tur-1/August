@@ -10,10 +10,11 @@
       </div>
 
       <div class="card-body placeholder-wave p-1">
-        <span class="placeholder col-5"></span>
-        <span class="placeholder col-2"></span>
         <span class="placeholder col-6"></span>
-        <span class="placeholder col-4 ms-1"></span>
+        <div>
+          <span class="placeholder col-7"></span>
+          <span class="placeholder col-3 ms-2"></span>
+        </div>
 
         <span class="placeholder col-3"></span>
       </div>

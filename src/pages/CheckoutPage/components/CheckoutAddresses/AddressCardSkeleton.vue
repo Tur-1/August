@@ -22,7 +22,6 @@
           </div>
           <div class="row text-dark placeholder-wave">
             <span class="placeholder me-2" style="width: 140px" />
-            <span class="placeholder" style="width: 180px" />
           </div>
         </div>
       </label>

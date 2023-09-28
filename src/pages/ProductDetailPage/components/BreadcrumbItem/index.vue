@@ -4,7 +4,9 @@
     :key="index"
     class="breadcrumb-item"
   >
-    <Link :to="{ name: 'shop', params: { categoryUrl: category.url } }">
+    <Link
+      :to="{ name: 'category_page', params: { category_url: category.url } }"
+    >
       {{ category.name }}</Link
     >
     <i class="bi bi-chevron-right"></i>

@@ -34,14 +34,14 @@
       >
         <CategoryCard
           name="view all"
-          :categoryUrl="category.url"
+          :category_url="category.url"
           :imageUrl="category.image_url"
         />
         <CategoryCard
           v-for="(subcategory, subcategoryIndex) in category.children"
           :key="subcategory.id"
           :name="subcategory.name"
-          :categoryUrl="subcategory.url"
+          :category_url="subcategory.url"
           :imageUrl="subcategory.image_url"
         />
       </div>
