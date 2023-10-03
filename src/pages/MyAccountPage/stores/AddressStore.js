@@ -9,12 +9,16 @@ export const useAddressStore = defineStore('AddressStore', () =>
 {
 
     const editMode = ref(false);
-    const addresses = reactive([]);
+    let addresses = reactive([]);
     const address_id = reactive({
         id: null,
         index: null
     });
+    function reset()
+    {
+        addresses = reactive([]);
 
+    }
     function enableEditMode()
     {
         editMode.value = true;
@@ -25,7 +29,7 @@ export const useAddressStore = defineStore('AddressStore', () =>
     }
 
     return {
-
+        reset,
         addresses,
         editMode,
         address_id,

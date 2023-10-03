@@ -1,5 +1,6 @@
 <script setup>
 import { useOrdersStore } from "@/pages/MyAccountPage/stores";
+import { onBeforeMount } from "vue";
 const ordersStore = useOrdersStore();
 </script>
 <template>

@@ -18,7 +18,7 @@ const props = defineProps({
   <div
     class="bottom-offcanvas-bg"
     @click="useBottomOffcanvas.close(props.id, $event)"
-    v-if="useBottomOffcanvas.isOpen && useBottomOffcanvas.id == props.id"
+    :class="{ show: useBottomOffcanvas.id == props.id }"
     :id="props.id"
   >
     <div class="bottom-offcanvas-container">
