@@ -35,13 +35,16 @@ export default function useProductPageService()
 
             let response = await useProductPageApi.getProductDetail(route.params.productSlug);
 
-            productStore.product = response.data.product;
+
+            productStore.product = response.data.product.productDetail;
             productStore.categories = response.data.categories;
             productStore.images = response.data.images;
             productStore.sizeOptions = response.data.sizeOptions;
+            productStore.relatedProducts = response.data.product.relatedProducts;
 
         } catch (error)
         {
+
             if (isNotFound(error))
             {
                 useRouterStore.redirectToRoute('pageNotFound');

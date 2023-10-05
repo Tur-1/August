@@ -1,9 +1,3 @@
-@media screen and (max-width: 760px) {
-    .bottom-offcanvas-body {
-        padding-bottom: 80px !important;
-    }
-}
-
 .bottom-offcanvas-bg {
     position: fixed;
     top: 0;
@@ -23,7 +17,6 @@
     bottom: 0;
     width: 100%;
     background-color: white;
-
     border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
     overflow-y: auto;
@@ -64,7 +57,7 @@
 .bottom-offcanvas-footer {
     display: flex;
     width: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
     padding-top: 10px;
     background-color: $bg-primary;
     margin-top: auto;

@@ -3,6 +3,13 @@ $bg-secondary: #f9f9f9;
 $text-primary-color: #222222;
 $text-secondary-color: #939393;
 $bg-green: #51c0a9;
+@media screen and (max-width: 760px) {
+    ::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        opacity: 0 !important;
+    }
+}
 
 * {
     margin: 0;
@@ -16,6 +23,7 @@ $bg-green: #51c0a9;
 html,
 body {
     overflow-x: hidden !important;
+    height: -webkit-fill-available;
 }
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
@@ -23,19 +31,13 @@ body {
     background-color: $bg-primary;
 }
 
-@media screen and (max-width: 760px) {
-    ::-webkit-scrollbar {
-        display: none !important;
-        width: 0 !important;
-        opacity: 0 !important;
-    }
-}
 #app {
     transition: scale 0.1s ease-in-out;
     border-radius: 5px !important;
     display: flex;
     flex-direction: column;
     overflow-x: hidden !important;
+    position: relative;
 }
 
 @media screen and (display-mode: standalone) {

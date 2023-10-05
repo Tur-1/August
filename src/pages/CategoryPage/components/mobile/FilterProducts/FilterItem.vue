@@ -31,7 +31,7 @@ const close = () => {
       @removeQuery="(item) => $emit('removeQuery', item)"
     />
   </div>
-  <MainOffcanvas :id="offcanvasId" :title="title" @onClose="close">
+  <MainOffcanvas height="60%" :id="offcanvasId" :title="title" @onClose="close">
     <template #body>
       <slot />
     </template>

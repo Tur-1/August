@@ -8,6 +8,10 @@ const props = defineProps({
     default: false,
     type: Boolean,
   },
+  height: {
+    type: String,
+    default: "100%",
+  },
 });
 const emits = defineEmits(["onClose"]);
 const closeOffcanvas = () => {
@@ -50,3 +54,8 @@ const closeOffcanvas = () => {
     </div>
   </div>
 </template>
+<style scoped>
+.main-offcanvas {
+  height: v-bind(height) !important;
+}
+</style>

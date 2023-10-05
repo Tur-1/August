@@ -14,15 +14,11 @@ import {
 } from "@/pages/ProductDetailPage/components";
 
 const productStore = useProductStore();
-const { getProductDetail, getRelatedProducts, getProductReviews } =
-  useProductPageService();
+const { getProductDetail, getProductReviews } = useProductPageService();
 
 onMounted(async () => {
   await getProductDetail();
-  Promise.all([
-    getRelatedProducts(),
-    getProductReviews(productStore.product.id),
-  ]);
+  Promise.all([getProductReviews(productStore.product.id)]);
 });
 </script>
 
