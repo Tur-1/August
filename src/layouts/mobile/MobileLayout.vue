@@ -14,21 +14,19 @@ const route = useRoute();
 </script>
 
 <template>
-  <Teleport to="#mobileHeader">
+  <Teleport to="#Header">
     <Header />
   </Teleport>
 
   <RouterView :key="route.path" />
 
-  <Teleport to="#mobileFooter">
+  <Teleport to="#Footer">
     <Footer />
   </Teleport>
 
-  <Teleport to="#BottomOffcanvas">
-    <BottomOffcanvas id="auth-modal" height="90%">
-      <template #body>
-        <AuthPage />
-      </template>
-    </BottomOffcanvas>
-  </Teleport>
+  <BottomOffcanvas id="auth-modal" height="80%">
+    <template #body>
+      <AuthPage />
+    </template>
+  </BottomOffcanvas>
 </template>

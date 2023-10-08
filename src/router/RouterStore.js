@@ -38,7 +38,7 @@ const useRouterStore = defineStore('RouterStore', () =>
     const setPageBackgroundColor = (color) =>
     {
 
-        document.getElementById('app').style.backgroundColor = color ?? 'white';
+        document.body.style.backgroundColor = color ?? 'white';
 
     };
     const setPageTitle = (title) =>

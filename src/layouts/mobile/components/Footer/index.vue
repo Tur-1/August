@@ -21,7 +21,7 @@ onMounted(async () => {
 });
 </script>
 <template>
-  <footer id="mobile-footer" class="footer safari">
+  <footer id="mobile-footer">
     <ul class="footer-items">
       <FooterItem page-name="Home" route-name="home" icon="bi bi-house-door" />
       <FooterItem

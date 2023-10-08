@@ -1,21 +1,18 @@
 /******** footer *************/
-
 @media (display-mode: standalone) {
     #mobile-footer {
-        // height: 73px !important;
-        // padding-bottom: 15px !important;
+        height: 85px !important;
     }
 }
-
 #mobile-footer {
     background-color: $bg-primary;
     border-top: 1px solid #96969630;
-    height: 53px;
+    height: calc(53px + env(safe-area-inset-bottom));
     position: fixed !important;
-    z-index: 999999999999999999;
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%;
     padding: 0px 10px;
     z-index: 1;
 }

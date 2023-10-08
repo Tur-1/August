@@ -3,13 +3,6 @@ $bg-secondary: #f9f9f9;
 $text-primary-color: #222222;
 $text-secondary-color: #939393;
 $bg-green: #51c0a9;
-@media screen and (max-width: 760px) {
-    ::-webkit-scrollbar {
-        display: none !important;
-        width: 0 !important;
-        opacity: 0 !important;
-    }
-}
 
 * {
     margin: 0;
@@ -23,46 +16,39 @@ $bg-green: #51c0a9;
 html,
 body {
     overflow-x: hidden !important;
-    height: -webkit-fill-available;
 }
 body {
+    position: relative;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     background-color: $bg-primary;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 760px) {
+    ::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        background: transparent;
+        opacity: 0 !important;
+        -webkit-appearance: none;
+    }
 }
 
 #app {
+    overflow-x: hidden !important;
+    height: 100%;
+    width: 100%;
     transition: scale 0.1s ease-in-out;
     border-radius: 5px !important;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden !important;
-    position: relative;
+    padding-top: 65px;
+    padding-bottom: calc(75px + env(safe-area-inset-bottom));
 }
-
-@media screen and (display-mode: standalone) {
-    section {
-        padding-bottom: 80px !important;
-        padding-top: 80px !important;
-        min-height: calc(100vh - 73px) !important;
-    }
-
-    #toast-alert {
-        top: 52px !important;
-    }
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden !important;
-}
-
 section {
-    padding-bottom: 65px;
-    padding-top: 60px;
-    min-height: calc(100vh - 70px);
-    padding-bottom: calc(env(safe-area-inset-bottom) + 65px);
+    width: 100%;
+    height: 100%;
 }
 @media ((min-width: 768px)) and (max-width: 995px) {
     section.container {
@@ -75,20 +61,29 @@ section {
     }
 }
 @media only screen and (max-width: 767px) {
-    section {
-        padding-top: 45px;
-        padding-bottom: 60px;
-        min-height: calc(100vh - 45px);
+    #app {
+        padding-top: 50px;
     }
 
-    section::-webkit-scrollbar,
-    main::-webkit-scrollbar {
+    body::-webkit-scrollbar,
+    #app::-webkit-scrollbar,
+    section::-webkit-scrollbar {
         display: none !important;
         width: 0 !important;
         opacity: 0 !important;
+        visibility: hidden !important;
     }
 }
+@media (display-mode: standalone) {
+    #app {
+        padding-bottom: calc(70px + env(safe-area-inset-bottom)) !important;
+        padding-top: calc(50px + env(safe-area-inset-top)) !important;
+    }
 
+    #toast-alert {
+        top: 52px !important;
+    }
+}
 input:focus,
 .form-check-input,
 button {

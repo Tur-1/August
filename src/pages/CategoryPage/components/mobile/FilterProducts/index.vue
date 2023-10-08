@@ -30,49 +30,48 @@ const { clearAll, filterProducts, removeQuery, countProductsTotal } =
       <i class="bi bi-funnel-fill"></i><span>Filter</span>
     </button>
   </div>
-  <Teleport to="#BottomOffcanvas">
-    <BottomOffcanvas id="filter">
-      <template #header>
-        <FilterHeader @clearAll="clearAll(route.query)" />
-      </template>
-      <template #body>
-        <FilterItem
-          title="brands"
-          offcanvasId="brands-filter"
-          @onClose="countProductsTotal"
-          :FilteredItems="route.query.brand"
-          @removeQuery="({ index, item }) => removeQuery(index, item, 'brand')"
-        >
-          <Brands />
-        </FilterItem>
-        <FilterItem
-          title="Colors"
-          offcanvasId="colors-filter"
-          @onClose="countProductsTotal"
-          @removeQuery="({ index, item }) => removeQuery(index, item, 'color')"
-          :FilteredItems="route.query.color"
-        >
-          <Colors />
-        </FilterItem>
-        <FilterItem
-          title="Size"
-          offcanvasId="sizes-filter"
-          :FilteredItems="route.query.size"
-          @onClose="countProductsTotal"
-          @removeQuery="({ index, item }) => removeQuery(index, item, 'size')"
-        >
-          <SizeOptions />
-        </FilterItem>
-      </template>
-      <template #footer>
-        <button
-          type="button"
-          @click="filterProducts({ query: route.query })"
-          class="btn btn-primary show-products-btn"
-        >
-          show products ({{ productsStore.total }})
-        </button>
-      </template>
-    </BottomOffcanvas>
-  </Teleport>
+
+  <BottomOffcanvas id="filter">
+    <template #header>
+      <FilterHeader @clearAll="clearAll(route.query)" />
+    </template>
+    <template #body>
+      <FilterItem
+        title="brands"
+        offcanvasId="brands-filter"
+        @onClose="countProductsTotal"
+        :FilteredItems="route.query.brand"
+        @removeQuery="({ index, item }) => removeQuery(index, item, 'brand')"
+      >
+        <Brands />
+      </FilterItem>
+      <FilterItem
+        title="Colors"
+        offcanvasId="colors-filter"
+        @onClose="countProductsTotal"
+        @removeQuery="({ index, item }) => removeQuery(index, item, 'color')"
+        :FilteredItems="route.query.color"
+      >
+        <Colors />
+      </FilterItem>
+      <FilterItem
+        title="Size"
+        offcanvasId="sizes-filter"
+        :FilteredItems="route.query.size"
+        @onClose="countProductsTotal"
+        @removeQuery="({ index, item }) => removeQuery(index, item, 'size')"
+      >
+        <SizeOptions />
+      </FilterItem>
+    </template>
+    <template #footer>
+      <button
+        type="button"
+        @click="filterProducts({ query: route.query })"
+        class="btn btn-primary show-products-btn"
+      >
+        show products ({{ productsStore.total }})
+      </button>
+    </template>
+  </BottomOffcanvas>
 </template>

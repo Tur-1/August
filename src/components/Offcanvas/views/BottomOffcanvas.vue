@@ -37,6 +37,9 @@ const props = defineProps({
 <style scoped>
 .bottom-offcanvas-container {
   height: v-bind(height);
-  border-radius: v-bind(borderRadius);
+}
+.bottom-offcanvas-header {
+  border-top-right-radius: v-bind(borderRadius);
+  border-top-left-radius: v-bind(borderRadius);
 }
 </style>

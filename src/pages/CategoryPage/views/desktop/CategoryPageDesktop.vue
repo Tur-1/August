@@ -28,7 +28,6 @@ const route = useRoute();
         </div>
         <div class="d-flex justify-content-center">
           <Pagination
-            v-if="ProductsStore.count !== 0"
             :links="ProductsStore.pagination.links"
             @onPageChange="
               (url) => getProducts({ url: url, query: route.query })

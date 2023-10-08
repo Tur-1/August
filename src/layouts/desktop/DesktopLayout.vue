@@ -16,13 +16,16 @@ const route = useRoute();
 </script>
 
 <template>
-  <main>
+  <Teleport to="#Header">
     <Header />
-    <RouterView :key="route.path" />
-    <Footer />
+  </Teleport>
 
-    <BaseModal id="auth-modal" @closeModal="useAuthModalStore.close()">
-      <AuthPage />
-    </BaseModal>
-  </main>
+  <RouterView :key="route.path" />
+
+  <Teleport to="#Footer">
+    <Footer />
+  </Teleport>
+  <BaseModal id="auth-modal" @closeModal="useAuthModalStore.close()">
+    <AuthPage />
+  </BaseModal>
 </template>

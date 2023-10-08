@@ -1,13 +1,14 @@
-@media screen and (display-mode: standalone) {
+@media (display-mode: standalone) {
     .mobile-offcanvas-filter-footer {
         padding: 20px 10px !important;
     }
-    .shop-page-mobile-section {
-        padding-top: 96px !important;
+
+    .mobile-shop-page-header {
+        top: calc(45px + env(safe-area-inset-top)) !important;
     }
 }
 .shop-page-mobile-section {
-    padding-top: 83px;
+    padding-top: 40px;
 }
 .mobile-shop-page-header {
     border: 1px solid #dee2e6;
@@ -16,7 +17,7 @@
     position: fixed;
     left: 0;
     right: 0;
-    top: 44px;
+    top: 44.7px;
     background-color: $bg-primary;
     display: flex;
     flex-wrap: wrap;

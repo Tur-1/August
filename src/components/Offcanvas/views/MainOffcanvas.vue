@@ -1,5 +1,6 @@
 <script setup>
 import { useMainOffcanvas } from "@/components/Offcanvas";
+import { ref } from "vue";
 
 const props = defineProps({
   id: String,
@@ -10,7 +11,19 @@ const props = defineProps({
   },
   height: {
     type: String,
-    default: "100%",
+    default: "100vh",
+  },
+  position: {
+    type: String,
+    default: "fixed",
+  },
+  borderRadius: {
+    type: String,
+    default: "0",
+  },
+  standalone: {
+    type: Boolean,
+    default: true,
   },
 });
 const emits = defineEmits(["onClose"]);
@@ -19,6 +32,10 @@ const closeOffcanvas = () => {
 
   emits("onClose");
 };
+let paddingTop = ref(0);
+if (props.height == "100%") {
+  paddingTop;
+}
 </script>
 <template>
   <div
@@ -31,7 +48,10 @@ const closeOffcanvas = () => {
     }"
   >
     <div class="main-offcanvas-container">
-      <div class="main-offcanvas-header">
+      <div
+        class="main-offcanvas-header"
+        :class="{ 'main-offcanvas-standalone-header': standalone }"
+      >
         <button
           class="main-offcanvas-header-close-btn"
           type="button"
@@ -57,5 +77,10 @@ const closeOffcanvas = () => {
 <style scoped>
 .main-offcanvas {
   height: v-bind(height) !important;
+  position: v-bind(position) !important;
+}
+.main-offcanvas-header {
+  border-top-right-radius: v-bind(borderRadius) !important;
+  border-top-left-radius: v-bind(borderRadius) !important;
 }
 </style>
