@@ -4,7 +4,7 @@ import api from "@/api";
 
 const setCsrfCookie = () =>
 {
-    api().get("http://e-august.shop/csrf-cookie");
+    api().get("sanctum/csrf-cookie");
 }
 
 const login = (fields) =>

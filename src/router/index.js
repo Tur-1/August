@@ -146,6 +146,7 @@ router.beforeEach((to, from, next) =>
     return AuthMiddleware({ to, from, next });
   }
 
+  window.scrollTo(0, 0);
   next();
 
 })

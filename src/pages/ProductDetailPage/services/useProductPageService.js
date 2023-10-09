@@ -129,13 +129,21 @@ export default function useProductPageService()
     const addToCart = async () =>
     {
 
-        if (isSizeNotSelected() || !productStore.product.in_stock) return;
+        if (isProductNotInStock()) return;
+
+        if (isSizeNotSelected())
+        {
+            useToastNotification.open({ error: true }).withMessage('please select a size!');
+            return;
+        };
 
         if (!useAuthUserStore().isAuthenticated)
         {
             useAuthModalStore.open();
             return;
         }
+
+
         useLoadingSpinner.show();
 
         try
@@ -163,6 +171,10 @@ export default function useProductPageService()
     const isSizeNotSelected = () =>
     {
         return isNull(productStore.selectedSize.size_id) || isNull(productStore.selectedSize.product_id);
+    }
+    const isProductNotInStock = () =>
+    {
+        return !productStore.product.in_stock;
     }
     return {
         getProductDetail,
