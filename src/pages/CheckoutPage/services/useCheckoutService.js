@@ -48,7 +48,8 @@ export default function useCheckoutService()
             let response = await useCheckoutApi.applyCoupon(couponStore.code);
 
             CheckoutStore.cartDetails = response.data.cartDetails;
-            couponStore.setCoupon(response.data.cartDetails.coupon);
+            couponStore.error = false;
+            couponStore.coupon = response.data.cartDetails.coupon;
             couponStore.setMessage(response.data.message);
 
             if (isNull(couponStore.coupon))

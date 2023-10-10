@@ -7,10 +7,10 @@ import { defineStore } from 'pinia'
 const useCouponStore = defineStore('CouponStore', () =>
 {
 
-    const code = ref('');
-    const message = ref(null);
-    const error = ref(false);
-    const coupon = ref(null);
+    let code = ref('');
+    let message = ref(null);
+    let error = ref(false);
+    let coupon = ref(null);
 
     function clearCode()
     {
