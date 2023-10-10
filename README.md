@@ -21,17 +21,17 @@ This template should help get you started developing with Vue 3 in Vite. The tem
  
 <p >
  <img src="https://github.com/Tur-1/August/assets/63422322/db1f5553-68c6-448b-858f-cc6a828f240f" width="100%" />
-   <img src="https://github.com/Tur-1/August/assets/63422322/d396b98c-af17-4c88-b67b-dd380822c0ba" width="45%" />
+   <img src="https://github.com/Tur-1/August/assets/63422322/d396b98c-af17-4c88-b67b-dd380822c0ba" width="100%" />
 </p>
 
 <p >
- <img src="https://github.com/Tur-1/August/assets/63422322/dd62ebd2-df54-4d82-a489-26c9b9298f6a" width="45%" />
-   <img src="https://github.com/Tur-1/August/assets/63422322/510b2140-eecf-4641-8982-1e770894283c" width="45%" />
+ <img src="https://github.com/Tur-1/August/assets/63422322/dd62ebd2-df54-4d82-a489-26c9b9298f6a" width="100%" />
+   <img src="https://github.com/Tur-1/August/assets/63422322/510b2140-eecf-4641-8982-1e770894283c" width="100%" />
 </p>
 
 <p >
- <img src="https://github.com/Tur-1/August/assets/63422322/c6c1362f-458a-4fa8-8bf6-a3a59e325678" width="45%" />
-  <img src="https://github.com/Tur-1/August/assets/63422322/b18aa1a9-8fac-4c89-8e77-b18ce26fcd74" width="45%" />
+ <img src="https://github.com/Tur-1/August/assets/63422322/c6c1362f-1008a-4fa8-8bf6-a3a59e325678" width="100%" />
+  <img src="https://github.com/Tur-1/August/assets/63422322/b18aa1a9-8fac-4c89-8e77-b18ce26fcd74" width="100%" />
 </p>
 
  
