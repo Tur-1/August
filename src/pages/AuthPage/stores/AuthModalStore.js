@@ -20,7 +20,7 @@ const useAuthModalStore = reactive({
 
         if (isMobile.value)
         {
-            useBottomOffcanvas.open('auth-modal');
+            useBottomOffcanvas.open('auth-modal', true);
         }
 
     },
@@ -36,7 +36,7 @@ const useAuthModalStore = reactive({
 
         if (isMobile.value)
         {
-            useBottomOffcanvas.close('auth-modal');
+            useBottomOffcanvas.close('auth-modal', true);
         }
 
     }

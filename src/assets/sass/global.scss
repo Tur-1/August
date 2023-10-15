@@ -26,22 +26,26 @@ body {
     display: flex;
     flex-direction: column;
 }
-
+.black-background {
+    background-color: #000 !important;
+}
 @media screen and (max-width: 760px) {
-    ::-webkit-scrollbar {
+    #app::-webkit-scrollbar,
+    body::-webkit-scrollbar,
+    html::-webkit-scrollbar {
         display: none !important;
         width: 0 !important;
-        background: transparent;
+        background: transparent !important;
         opacity: 0 !important;
-        -webkit-appearance: none;
     }
 }
 
 #app {
     overflow-x: hidden !important;
     height: 100%;
+    background-color: $bg-primary;
     width: 100%;
-    transition: scale 0.1s ease-in-out;
+    transition: scale 0.2s ease-in-out;
     border-radius: 5px !important;
     padding-top: 65px;
     padding-bottom: calc(75px + env(safe-area-inset-bottom));
@@ -63,15 +67,6 @@ section {
 @media only screen and (max-width: 767px) {
     #app {
         padding-top: 50px;
-    }
-
-    body::-webkit-scrollbar,
-    #app::-webkit-scrollbar,
-    section::-webkit-scrollbar {
-        display: none !important;
-        width: 0 !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
     }
 }
 @media (display-mode: standalone) {

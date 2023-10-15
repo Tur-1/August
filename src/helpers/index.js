@@ -12,7 +12,10 @@ if (mediaQueryWidth.matches)
 }
 
 export { isMobile, isDesktop };
-
+export const isRunningStandalone = () =>
+{
+    return (window.matchMedia('(display-mode: standalone)').matches);
+}
 export const isNotNull = (value) =>
 {
     return value != null;
