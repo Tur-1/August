@@ -129,6 +129,7 @@ const router = createRouter({
   scrollBehavior(to, from, savedPosition)
   {
 
+
     return {
       top: 0,
       behavior: 'smooth',
@@ -146,7 +147,6 @@ router.beforeEach((to, from, next) =>
     return AuthMiddleware({ to, from, next });
   }
 
-  window.scrollTo(0, 0);
   next();
 
 })

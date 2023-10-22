@@ -1,17 +1,15 @@
 <template>
-  <header class="mobile-header">
-    <nav class="navigation">
-      <div class="nav-back-button" v-if="routerStore.previousPage">
-        <Link :to="routerStore.previousPage">
-          <i class="bi bi-arrow-left"></i>
-        </Link>
-      </div>
-      <span class="page-title" v-if="!route.meta.hidePageTitle">
-        {{ routerStore.pageTitle }}
-      </span>
-      <SearchBar />
-    </nav>
-  </header>
+  <nav class="mobile-navbar">
+    <div class="nav-back-button" v-if="routerStore.previousPage">
+      <Link :to="routerStore.previousPage">
+        <i class="bi bi-arrow-left"></i>
+      </Link>
+    </div>
+    <span class="page-title" v-if="!route.meta.hidePageTitle">
+      {{ routerStore.pageTitle }}
+    </span>
+    <SearchBar />
+  </nav>
 </template>
 <script setup>
 import { useRoute } from "vue-router";

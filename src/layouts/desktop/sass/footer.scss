@@ -1,11 +1,12 @@
 /******** footer *************/
 #Footer {
-    margin-top: auto;
+    margin-top: auto !important;
 }
 .desktop-footer {
     background-color: $bg-primary;
     border-top: 1px solid #96969630;
     height: 65px;
+    margin-top: auto !important;
 
     display: flex;
     align-items: center;

@@ -1,23 +1,20 @@
 /******** footer *************/
 @media (display-mode: standalone) {
-    #mobile-footer {
-        height: 85px !important;
-    }
 }
-#mobile-footer {
+
+.mobile-footer {
     background-color: $bg-primary;
     border-top: 1px solid #96969630;
-    height: calc(53px + env(safe-area-inset-bottom));
+    padding: 0px 10px;
+    height: calc(55px + env(safe-area-inset-bottom));
     position: fixed !important;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
-    padding: 0px 10px;
     z-index: 1;
+    width: 100%;
 }
-
-#mobile-footer .footer-items {
+.mobile-footer .footer-items {
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -42,7 +39,7 @@
     font-weight: 500;
 }
 
-#mobile-footer .footer-items .footer-item a i {
+.mobile-footer .footer-items .footer-item a i {
     font-size: 24px;
 }
 

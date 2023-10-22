@@ -9,6 +9,7 @@ const props = defineProps({
     default: false,
     type: Boolean,
   },
+  bodyStyle: String,
   height: {
     type: String,
     default: "100vh",
@@ -65,7 +66,7 @@ if (props.height == "100%") {
           </div>
         </button>
       </div>
-      <div class="main-offcanvas-body">
+      <div class="main-offcanvas-body" :style="bodyStyle">
         <slot name="body"> </slot>
       </div>
       <div class="main-offcanvas-footer">
@@ -78,6 +79,10 @@ if (props.height == "100%") {
 .main-offcanvas {
   height: v-bind(height) !important;
   position: v-bind(position) !important;
+}
+.main-offcanvas-container {
+  border-top-right-radius: v-bind(borderRadius) !important;
+  border-top-left-radius: v-bind(borderRadius) !important;
 }
 .main-offcanvas-header {
   border-top-right-radius: v-bind(borderRadius) !important;

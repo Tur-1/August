@@ -21,7 +21,6 @@ const route = useRoute();
   </Teleport>
 
   <RouterView :key="route.path" />
-
   <Teleport to="#Footer">
     <Footer />
   </Teleport>

@@ -25,4 +25,11 @@ const ordersStore = useOrdersStore();
       </div>
     </Link>
   </div>
+
+  <div
+    v-if="ordersStore.orders.length <= 0"
+    class="d-flex align-items-center justify-content-center"
+  >
+    <h3 class="text-center text-dark">No Orders Found</h3>
+  </div>
 </template>

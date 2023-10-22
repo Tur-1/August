@@ -1,20 +1,9 @@
 /******** desktop header *************/
+
 .desktop-navbar {
-    position: fixed !important;
-    border-bottom: 1px solid #cccccc75;
-    top: 0 !important;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    background-color: $bg-primary !important;
-}
-.desktop-navbar nav {
-    height: 60px;
-}
-nav {
     background-color: $bg-primary;
 }
-.desktop-navbar .navbar-collapse {
+.navbar-collapse {
     background-color: $bg-primary;
     padding: 10px;
 }

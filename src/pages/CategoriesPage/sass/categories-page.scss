@@ -1,16 +1,12 @@
 /******** categories page *************/
-@media (display-mode: standalone) {
-    .categories-page-header {
-        top: calc(45px + env(safe-area-inset-top)) !important;
-    }
-    .categories-page-body {
-        padding-top: 35px !important;
-    }
-}
+
 .categories-page-header {
-    width: 100%;
-    position: fixed;
+    position: -webkit-sticky !important;
+    position: sticky !important;
     top: calc(45px + env(safe-area-inset-top));
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
     background-color: white;
     display: flex;
 }
@@ -38,7 +34,7 @@
 
 .categories-page-body {
     background-color: #f9f9f9;
-    padding-top: 35px;
+    padding-top: 5px;
 }
 .categories-page-body .section-content {
     background-color: #f9f9f9;

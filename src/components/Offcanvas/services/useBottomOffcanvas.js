@@ -14,14 +14,17 @@ const getBodyTag = () =>
 }
 const setBodyOverFlow = (value) =>
 {
-    getApp().style.overflow = value;
-    getBodyTag().style.overflow = value;
-    document.documentElement.style.overflow = value;
-    document.querySelector(".bottom-offcanvas-bg").style.overflow = value;
+
+    document.documentElement.classList.add(value);
 
 };
 
+const removeBodyOverFlow = (value) =>
+{
 
+    document.documentElement.classList.remove(value);
+
+};
 
 
 
@@ -31,34 +34,17 @@ const useBottomOffcanvas = reactive({
     id: String,
     open(id, scaleAnimation = false)
     {
+
+        setBodyOverFlow('overflowHidden');
         this.isOpen = true;
         this.id = id;
-
-        if (scaleAnimation && isRunningStandalone())
-        {
-            this.scaleAnimation = true;
-            getApp().style.scale = '.97 .90';
-            getBodyTag().classList.add('black-background');
-        }
-
-        setBodyOverFlow("hidden");
-
-
     },
     close(id, event)
     {
+        removeBodyOverFlow('overflowHidden');
         this.isOpen = false;
         if (event && event.target.closest(".bottom-offcanvas-container")) return;
 
-        if (this.scaleAnimation)
-        {
-            this.scaleAnimation = false;
-            document.getElementById('app').style.removeProperty('scale');
-            getBodyTag().classList.remove('black-background');
-        }
-
-
-        setBodyOverFlow("auto");
         this.id = null;
 
     },

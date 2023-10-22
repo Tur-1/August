@@ -1,7 +1,7 @@
 <template>
   <ul class="google-github-buttons">
     <li>
-      <a class="btn btn-dark">
+      <a role="button" @click="loginGitub" class="btn btn-dark">
         <i class="bi bi-github me-1"></i>
         Sign in With Github
       </a>
@@ -14,4 +14,8 @@
     </li>
   </ul>
 </template>
-<script setup></script>
+<script setup>
+import useAuthService from "@/pages/AuthPage/services/useAuthService";
+
+const { loginGitub } = useAuthService();
+</script>

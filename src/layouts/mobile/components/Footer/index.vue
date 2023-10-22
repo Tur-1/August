@@ -21,7 +21,7 @@ onMounted(async () => {
 });
 </script>
 <template>
-  <footer id="mobile-footer">
+  <div class="mobile-footer">
     <ul class="footer-items">
       <FooterItem page-name="Home" route-name="home" icon="bi bi-house-door" />
       <FooterItem
@@ -53,5 +53,5 @@ onMounted(async () => {
         :fill="false"
       />
     </ul>
-  </footer>
+  </div>
 </template>

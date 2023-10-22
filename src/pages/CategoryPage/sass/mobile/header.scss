@@ -1,27 +1,16 @@
-@media (display-mode: standalone) {
-    .mobile-offcanvas-filter-footer {
-        padding: 20px 10px !important;
-    }
-
-    .mobile-shop-page-header {
-        top: calc(45px + env(safe-area-inset-top)) !important;
-    }
-}
-.shop-page-mobile-section {
-    padding-top: 40px;
-}
 .mobile-shop-page-header {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: calc(45px + env(safe-area-inset-top));
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
     border: 1px solid #dee2e6;
     border-top: none !important;
-    background-color: white;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 44.7px;
     background-color: $bg-primary;
     display: flex;
     flex-wrap: wrap;
-    z-index: 999;
+    z-index: 99;
 }
 .mobile-shop-page-header .sort-filter-btns {
     background-color: transparent !important;

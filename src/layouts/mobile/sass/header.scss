@@ -1,48 +1,46 @@
 /******* mobile header ********/
 @media (display-mode: standalone) {
-    .mobile-header {
-        padding-top: env(safe-area-inset-top) !important;
+    .mobile-navbar {
+        align-items: self-end !important;
+        padding: 4px 10px !important;
     }
 }
-
-.mobile-header {
-    position: fixed !important;
+header {
+    position: -webkit-sticky !important;
+    position: sticky !important;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: calc(45px + env(safe-area-inset-top)) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
     z-index: 999;
+    height: calc(45px + env(safe-area-inset-top));
+}
+
+.mobile-navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #cccccc75;
-    background-color: $bg-primary;
-    border-radius: 5px !important;
-}
-.mobile-header .navigation {
     color: #1a1a1a !important;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background-color: $bg-primary;
     font-size: 16px;
+    padding: 0px 10px;
+    height: 100%;
     width: 100%;
-    padding: 0 10px;
 }
+
 .hidden {
     visibility: hidden;
 }
 
-.mobile-header .navigation .nav-back-button,
+.mobile-navbar .nav-back-button,
 .page-title {
-    font-size: 18px !important;
+    font-size: 22px !important;
     color: black !important;
 }
 .nav-back-button i {
     color: #000000 !important;
-    font-size: 20px !important;
+    font-size: 24px !important;
 }
 .nav-back-button i::before {
     font-weight: 700 !important;
@@ -65,7 +63,7 @@
     display: flex;
     align-items: center;
     padding: 0 8px;
-    height: 30px;
+    height: 35px;
     font-size: 15px;
     border-radius: 20px;
     background-color: #f9f9f9;

@@ -15,15 +15,19 @@ const route = useRoute();
 </script>
 
 <template>
-  <Teleport to="#Header"> </Teleport>
-  <Header />
+  <Teleport to="#Header">
+    <Header />
+  </Teleport>
+
   <RouterView :key="route.path" />
-  <Footer />
-  <Teleport to="#Footer"> </Teleport>
+
+  <Teleport to="#Footer">
+    <Footer />
+  </Teleport>
   <Teleport to="#BottomOffcanvas">
     <BottomOffcanvas
       id="auth-modal"
-      :height="isRunningStandalone() ? '90%' : '77%'"
+      :height="isRunningStandalone() ? '88%' : '77%'"
     >
       <template #body>
         <AuthPage />
