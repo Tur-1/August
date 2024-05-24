@@ -122,7 +122,6 @@ const router = createRouter({
         title: config.APP_NAME,
       },
       component: () => import('@/pages/Errors/PageNotFound.vue'),
-
     },
 
   ],
