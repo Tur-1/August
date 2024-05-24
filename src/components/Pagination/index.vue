@@ -11,8 +11,9 @@
           role="button"
           @click="changePage(link.url)"
           class="page-link"
+          v-html="link.label"
         >
-          {{ link.label }}
+          
         </button>
       </li>
     </ul>

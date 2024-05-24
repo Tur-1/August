@@ -69,16 +69,21 @@ export default function useCategoryPageService()
                     query: query
                 });
 
+              
             ProductsStore.products = response.data.products.data;
-            ProductsStore.total = response.data.products.meta.pagination.total;
-            ProductsStore.pagination = response.data.products.meta.pagination;
+            ProductsStore.total = response.data.products.meta.total;
+            ProductsStore.pagination.meta = response.data.products.meta;
+            ProductsStore.pagination.prevPage = response.data.products.links.prev;
+            ProductsStore.pagination.nextPage = response.data.products.links.next;
+            
             brandsStore.brands = response.data.brands;
             sizeStore.sizes = response.data.sizes;
 
 
         } catch (error)
         {
-         }
+            
+        }
 
         skeletonLoading.hide('products');
 
