@@ -30,6 +30,9 @@ const useRouterStore = defineStore('RouterStore', () =>
     {
         return route.meta.requiresAuth;
     };
+    const getCurrentRoutePath = ()=> {
+        return route.fullPath;
+    }
     const redirectToRoute = (routeName) =>
     {
 
@@ -72,7 +75,7 @@ const useRouterStore = defineStore('RouterStore', () =>
         setPageBackgroundColor,
         redirectToRoute,
         setPreviousPage,
-        isRouteRequiresAuth
+        isRouteRequiresAuth,getCurrentRoutePath
     };
 
 }, {

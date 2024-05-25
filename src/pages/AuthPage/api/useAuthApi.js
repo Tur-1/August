@@ -14,10 +14,9 @@ const login = (fields) =>
     return api().post("login", fields);
 }
 
-const loginGitub = () =>
+const getAuthUser = () =>
 {
-
-    return api().get("/github/sign-in");
+    return api().post("/get-auth-user");
 }
 const logout = () =>
 {
@@ -46,5 +45,5 @@ export default {
     logout,
     resetPassword,
     sendPasswordResetLink,
-    loginGitub
+    getAuthUser
 }
