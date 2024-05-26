@@ -43,11 +43,8 @@ export default function useCategoryPageService()
 
 
         } catch (error)
-        {
-
-
-            routerService.redirectToRoute('pageNotFound');
-
+        { 
+              routerService.redirectToRoute('pageNotFound');
         }
 
         skeletonLoading.hide('sidebar');
@@ -72,18 +69,20 @@ export default function useCategoryPageService()
                     query: query
                 });
 
-
+              
             ProductsStore.products = response.data.products.data;
             ProductsStore.total = response.data.products.meta.total;
-            ProductsStore.pagination = response.data.products.meta.links;
+            ProductsStore.pagination.meta = response.data.products.meta;
+            ProductsStore.pagination.prevPage = response.data.products.links.prev;
+            ProductsStore.pagination.nextPage = response.data.products.links.next;
+            
             brandsStore.brands = response.data.brands;
             sizeStore.sizes = response.data.sizes;
 
 
         } catch (error)
         {
-
-           routerService.redirectToRoute('pageNotFound');
+            
         }
 
         skeletonLoading.hide('products');
@@ -102,7 +101,7 @@ export default function useCategoryPageService()
 
         } catch (error)
         {
-            routerService.redirectToRoute('pageNotFound');
+            
         }
 
     }
@@ -117,8 +116,7 @@ export default function useCategoryPageService()
             sizeStore.sizes = response.data.sizes;
 
         } catch (error)
-        {
-            routerService.redirectToRoute('pageNotFound');
+        { 
         }
 
     }
@@ -133,8 +131,7 @@ export default function useCategoryPageService()
             colorsStore.colors = response.data.colors;
 
         } catch (error)
-        {
-            routerService.redirectToRoute('pageNotFound');
+        { 
         }
 
     }

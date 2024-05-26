@@ -3,20 +3,20 @@
     <div class="mobile-pagination">
       <a
         class="page-link me-5"
-        :class="{ hidden: !pagination.prev_page_url }"
+        :class="{ hidden: !props.prevPage}"
         role="button"
-        @click="changePage(pagination.prev_page_url)"
+        @click="changePage(props.prevPage)"
       >
         <i class="bi bi-chevron-left" style="font-size: 20px !important"></i>
       </a>
       <div>
-        <strong>PAGE {{ pagination.current_page }}</strong>
+        <strong>PAGE {{ props.currentPage }}</strong>
       </div>
       <a
         class="page-link ms-5"
         role="button"
-        @click="changePage(pagination.next_page_url)"
-        :class="{ hidden: !pagination.next_page_url }"
+        @click="changePage(props.nextPage)"
+        :class="{ hidden: !nextPage }"
       >
         <i class="bi bi-chevron-right" style="font-size: 20px !important"> </i>
       </a>
@@ -24,7 +24,17 @@
   </div>
 </template>
 <script setup>
-defineProps(["pagination"]);
+const props = defineProps({
+  nextPage:{
+    default:null,
+  },
+  currentPage:{
+    default:null,
+  },
+  prevPage:{
+    default:null,
+  },
+});
 const emits = defineEmits(["onPageChange"]);
 
 const changePage = (url) => {

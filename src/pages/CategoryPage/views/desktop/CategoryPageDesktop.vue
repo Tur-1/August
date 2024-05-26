@@ -28,7 +28,7 @@ const route = useRoute();
         </div>
         <div class="d-flex justify-content-center">
           <Pagination
-            :links="ProductsStore.pagination.links"
+            :links="ProductsStore.pagination.meta.links"
             @onPageChange="
               (url) => getProducts({ url: url, query: route.query })
             "

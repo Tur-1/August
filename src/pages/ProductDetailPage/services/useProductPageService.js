@@ -1,7 +1,6 @@
 
 import { useLoadingSpinner } from '@/components/LoadingSpinner';
 import useProductPageApi from '@/pages/ProductDetailPage/api/useProductPageApi';
-import useRouterStore from '@/router/RouterStore';
 import useToastNotification from '@/components/Toast/useToastNotification';
 import { useRoute } from "vue-router";
 import { ref } from 'vue';
@@ -13,6 +12,7 @@ import
     useReviewsStore,
     useProductStore
 } from '@/pages/ProductDetailPage/stores';
+import useRouterStore from '@/router/RouterStore';
 
 const review = ref({
     comment: "",
@@ -22,6 +22,7 @@ export default function useProductPageService()
 {
     const CartCounter = useCartCounterStore();
     const productStore = useProductStore();
+    const routeStore =useRouterStore();
 
     const getProductDetail = async () =>
     {
@@ -140,6 +141,7 @@ export default function useProductPageService()
         if (!useAuthUserStore().isAuthenticated)
         {
             useAuthModalStore.open();
+            routeStore.setIntendedPath(routeStore.getCurrentRoutePath());
             return;
         }
 

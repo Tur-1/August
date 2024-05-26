@@ -32,7 +32,9 @@ const route = useRoute();
         />
 
         <MobilePagination
-          :pagination="ProductsStore.pagination"
+          :prevPage="ProductsStore.pagination.prevPage"
+          :nextPage="ProductsStore.pagination.nextPage"
+          :currentPage="ProductsStore.pagination.meta.current_page"
           @onPageChange="(url) => getProducts({ url: url, query: route.query })"
         />
       </div>

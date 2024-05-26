@@ -39,24 +39,20 @@ export default function useAuthService()
         useLoadingSpinner.hide();
 
     };
-    const loginGitub = async () =>
-    {
 
-        useLoadingSpinner.show();
+    const getAuthUser = async () =>
+    {
 
         try
         {
-            let response = await useAuthApi.loginGitub();
+            let response = await useAuthApi.getAuthUser();
 
-            window.location = response.data;
-
+            console.log(response.data);
         } catch (error)
         {
 
             console.log(error);
         }
-
-        useLoadingSpinner.hide();
 
     };
     const register = async () =>
@@ -156,7 +152,7 @@ export default function useAuthService()
         logout,
         sendPasswordResetLink,
         resetPassword,
-        loginGitub
+        getAuthUser
     }
 }
 

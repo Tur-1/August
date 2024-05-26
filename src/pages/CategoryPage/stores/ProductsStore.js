@@ -5,7 +5,11 @@ export const useProductsStore = defineStore('ProductsStore', () =>
 {
     const count = ref(0);
     const products = reactive([]);
-    const pagination = reactive([]);
+    const pagination = reactive({
+        meta:Object,
+        prevPage:String,
+        nextPage:String
+});
     const total = ref(0);
 
 
