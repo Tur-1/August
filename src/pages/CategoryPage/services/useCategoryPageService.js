@@ -45,6 +45,7 @@ export default function useCategoryPageService()
         } catch (error)
         {
 
+
             routerService.redirectToRoute('pageNotFound');
 
         }
@@ -71,16 +72,18 @@ export default function useCategoryPageService()
                     query: query
                 });
 
+
             ProductsStore.products = response.data.products.data;
-            ProductsStore.total = response.data.products.meta.pagination.total;
-            ProductsStore.pagination = response.data.products.meta.pagination;
+            ProductsStore.total = response.data.products.meta.total;
+            ProductsStore.pagination = response.data.products.meta.links;
             brandsStore.brands = response.data.brands;
             sizeStore.sizes = response.data.sizes;
 
 
         } catch (error)
         {
-            routerService.redirectToRoute('pageNotFound');
+
+           routerService.redirectToRoute('pageNotFound');
         }
 
         skeletonLoading.hide('products');
