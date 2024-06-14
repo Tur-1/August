@@ -1,9 +1,9 @@
 <template>
   <ul class="google-github-buttons">
     <li>
-      <a role="button" class="btn btn-dark">
+      <a  :href="config.OAUTH_EFARMER+'?redirect_intended_path='+useRouterStore().intendedPath" class="btn btn-dark">
         <i class="bi bi-github me-1"></i>
-        Sign in With Github
+        Sign in With E-Framer
       </a>
     </li>
     <li>
